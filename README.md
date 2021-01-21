@@ -4,12 +4,15 @@
 - NASA에서 공개하는 매일의 우주 사진과 제목을 일, 월, 년 별로 보여준다.
 
 ### 목표 (중요도 순)
+<br>
+
 1. 단방향 데이터 흐름과 리덕스 미들웨어 이해
 2. redux, redux-saga, reselect 사용
 3. redux-saga로 HTTP Request + 적절한 성공/실패 처리 
 4. selector로 cache 적용
 5. 검색(사진 이름), 필터(년, 월, 일) 기능 구현
 6. redux-saga 테스트
+<br>
 
 7. desk 구조 참고하여 구조 짜보기
 8. desk coding convention 참고하여 코딩 스타일 맞춰보기
