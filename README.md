@@ -4,21 +4,21 @@
 - NASA에서 공개하는 매일의 우주 사진과 제목을 일, 월, 년 별로 보여준다.
 
 ### 목표 (중요도 순)
-- 단방향 데이터 흐름과 리덕스 미들웨어 이해
-- redux, redux-saga, reselect 사용
-- redux-saga로 HTTP Request + 적절한 성공/실패 처리 
-- selector로 cache 적용
-- 검색(사진 이름), 필터(년, 월, 일) 기능 구현
-- redux-saga 테스트
+1. 단방향 데이터 흐름과 리덕스 미들웨어 이해
+2. redux, redux-saga, reselect 사용
+3. redux-saga로 HTTP Request + 적절한 성공/실패 처리 
+4. selector로 cache 적용
+5. 검색(사진 이름), 필터(년, 월, 일) 기능 구현
+6. redux-saga 테스트
 
-- desk 구조 참고하여 구조 짜보기
-- desk coding convention 참고하여 코딩 스타일 맞춰보기
-- desk commit history 참고하여 commit message 써보기
-- formik
-- 사진 추가/수정/삭제
-- 무한 스크롤
-- debounce, throttle
-- UI/UX
+7. desk 구조 참고하여 구조 짜보기
+8. desk coding convention 참고하여 코딩 스타일 맞춰보기
+9. desk commit history 참고하여 commit message 써보기
+10. formik
+11. 사진 추가/수정/삭제
+12. 무한 스크롤
+13. debounce, throttle
+14. UI/UX
 
 ### 주요 라이브러리
 - react, redux, redux-saga, reselect, immutable, formik, styled-components, redux-saga-test-plan 
