@@ -1,11 +1,10 @@
 # astronomy-picture-of-the-day
 
 ### 설명
-- NASA에서 공개하는 매일의 우주 사진과 제목을 일, 월, 년 별로 보여준다.
-
-### 목표 (중요도 순)
+ NASA에서 공개하는 매일의 우주 사진 (사진과 제목을 연, 월, 일 별로 보여줌)
 <br>
-
+ 
+### 목표 (중요도 순)
 1. 단방향 데이터 흐름과 리덕스 미들웨어 이해
 2. redux, redux-saga, reselect 사용
 3. redux-saga로 HTTP Request + 적절한 성공/실패 처리 
@@ -22,10 +21,12 @@
 12. 무한 스크롤
 13. debounce, throttle
 14. UI/UX
-
+<br>
+ 
 ### 주요 라이브러리
 - react, redux, redux-saga, reselect, immutable, formik, styled-components, redux-saga-test-plan 
-
+<br>
+ 
 ### 구조
 ```
 ├  root
@@ -40,19 +41,22 @@
   ├  hooks # custom hook
   ├  utils # 유틸 함수와 테스트
 ```
-
+<br>
+ 
 ### API
 - Nasa Open APIs - APOD
 - Source : https://api.nasa.gov/
 - API KEY : O5zaBK5eqI3ub8SmVdlb4JdGcewih1y5MiQzt2pD
 - HTTP Requests : GET https://api.nasa.gov/planetary/apod
 - Example Query : https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-
+<br>
+ 
 ### 질문거리들
 - 목표의 중요도 평가
 - 시도해보면 좋을만한 것들
 - (추가 예정)
-
+<br>
+ 
 ### 참고
 - 주요 라우팅(routes)과 연결 → container
 - redux 로직과 연결 되어야만 하는 컴포넌트 → component
