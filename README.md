@@ -31,6 +31,6 @@
 
 
 ### 참고자료
-[폴더 구조 및 내용 설명](https://www.notion.so/channelio/8d1eea36937b4f32a95e3c40789fddfe)
-[desk - Redux](https://www.notion.so/channelio/Redux-ddf9204aca9f4ae7b24bfad04888f8a4)
+[폴더 구조 및 내용 설명](https://www.notion.so/channelio/8d1eea36937b4f32a95e3c40789fddfe)  
+[desk - Redux](https://www.notion.so/channelio/Redux-ddf9204aca9f4ae7b24bfad04888f8a4)  
 ![image](https://user-images.githubusercontent.com/34447105/105371388-ecc99780-5c47-11eb-8f73-f712ad34e1d7.png)
