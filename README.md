@@ -1,7 +1,7 @@
 # astronomy-picture-of-the-day
 
 ### 설명
- NASA에서 공개하는 매일의 우주 사진 (사진과 제목을 연, 월, 일 별로 보여줌)
+ NASA에서 공개하는 매일의 우주 사진
  
 <br>
  
