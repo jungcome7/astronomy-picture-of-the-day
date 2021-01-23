@@ -7,6 +7,7 @@ export const Container = styled.div`
   min-width: 1100px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Logo = styled.div`
