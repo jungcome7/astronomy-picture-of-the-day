@@ -8,7 +8,7 @@ type ApodDetailProps = {
 
 const ApodDetail = ({ date }: ApodDetailProps) => {
   const { getApodSelected, apodSelected } = useApod();
-  console.log(date);
+
   useEffect(() => {
     getApodSelected(date);
   }, [getApodSelected, date]);

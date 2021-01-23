@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux';
-import { getApodByDate } from '../redux/apod';
+import { getApodByDate, initializeSelectedApod } from '../redux/apod';
 
 const useApod = () => {
   const apodList = useSelector((state: RootState) => state.apod.apodList);
@@ -12,12 +12,17 @@ const useApod = () => {
 
   const getApodSelected = useCallback(
     (date) => {
+      // dispatch(initializeSelectedApod());
       dispatch(getApodByDate(date));
     },
     [dispatch],
   );
 
-  return { apodList, apodSelected, getApodSelected };
+  const removeSelectedApod = useCallback(() => {
+    dispatch(initializeSelectedApod());
+  }, [dispatch]);
+
+  return { apodList, apodSelected, getApodSelected, removeSelectedApod };
 };
 
 export default useApod;
