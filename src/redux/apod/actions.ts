@@ -33,3 +33,8 @@ export const getApodByDateFailure = createAction(
   AT.GET_APOD_BY_DATE_FAILURE,
   (error) => error,
 )();
+
+export const initializeSelectedApod = createAction(
+  AT.INITIALIZE_SELECTED_APOD,
+  () => ({}),
+)();

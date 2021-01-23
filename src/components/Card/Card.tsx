@@ -2,8 +2,6 @@ import React, { useCallback } from 'react';
 import * as S from './CardStyle';
 import { Apod } from '../../types';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import useApod from '../../hooks/useApod';
 
 type CardProps = {
   key: string;
@@ -13,12 +11,9 @@ type CardProps = {
 const Card = ({ apod }: CardProps) => {
   const { title, url, date, media_type } = apod;
   const history = useHistory();
-  const dispatch = useDispatch();
-  const { getApodSelected, apodSelected } = useApod();
 
   const goToApodDetail = useCallback(() => {
     history.push(`/apod/${date}`);
-    getApodSelected(date);
   }, [apod]);
 
   return (

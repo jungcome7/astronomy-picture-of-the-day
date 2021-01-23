@@ -24,6 +24,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     error,
   }),
+  [AT.INITIALIZE_SELECTED_APOD]: (state) => ({
+    ...state,
+    apodSelected: null,
+  }),
 });
 
 export default apod;
