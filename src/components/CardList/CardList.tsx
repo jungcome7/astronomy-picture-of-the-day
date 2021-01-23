@@ -18,7 +18,7 @@ const CardList = () => {
     <S.Layout>
       <S.Container>
         {apodList &&
-          filteredApodList.map((apod) => <Card key={apod.title} apod={apod} />)}
+          filteredApodList.map((apod) => <Card key={apod.date} apod={apod} />)}
       </S.Container>
     </S.Layout>
   );

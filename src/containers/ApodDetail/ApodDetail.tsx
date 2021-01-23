@@ -6,7 +6,7 @@ const ApodDetail = () => {
   return (
     <S.Container>
       <Header isSearchBar={false} isDatePicker={false} />
-      ApodDetail
+      {/* <S. */}
     </S.Container>
   );
 };

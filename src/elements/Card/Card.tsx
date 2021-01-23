@@ -13,7 +13,7 @@ const Card = ({ apod }: CardProps) => {
   const history = useHistory();
 
   const goToApodDetail = () => {
-    history.push(`/apod/${title}`);
+    history.push(`/apod/${date}`);
   };
 
   return (
