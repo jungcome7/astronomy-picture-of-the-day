@@ -1,34 +1,29 @@
 import { takeLatest } from 'redux-saga/effects';
 import { getApod } from '../../api/api';
-import { GET_APOD } from './actions';
 import { call, put } from 'redux-saga/effects';
 import { startLoading, finishLoading } from '../loading';
 import { ApodAction } from '../apod/types';
+import AT from './actionTypes';
 
-function getSaga(type: string, request: any) {
-  const SUCCESS = `${type}_SUCCESS`;
-  const FAILURE = `${type}_FAILURE`;
+function* getApodSaga(action: ApodAction) {
+  yield put(startLoading(AT.GET_APOD));
+  try {
+    const response = yield call(getApod, action.payload);
+    yield put({
+      type: AT.GET_APOD_SUCCESS,
+      payload: response.data,
+    });
+  } catch (e) {
+    yield put({
+      type: AT.GET_APOD_FAILURE,
+      payload: e,
+      error: true,
+    });
+  }
 
-  return function* (action: ApodAction) {
-    yield put(startLoading(type));
-    try {
-      const response = yield call(request, action.payload);
-      yield put({
-        type: SUCCESS,
-        payload: response.data,
-      });
-    } catch (e) {
-      yield put({
-        type: FAILURE,
-        payload: e,
-        error: true,
-      });
-    }
-
-    yield put(finishLoading(type));
-  };
+  yield put(finishLoading(AT.GET_APOD));
 }
 
 export function* apodSaga() {
-  yield takeLatest(GET_APOD, getSaga(GET_APOD, getApod));
+  yield takeLatest(AT.GET_APOD, getApodSaga);
 }
