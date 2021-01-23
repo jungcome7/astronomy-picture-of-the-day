@@ -42,6 +42,7 @@
   ├  hooks # custom hook
   ├  redux # action, actionType, api, reducer, saga, saga-test, selector
   ├  routes # react-router (트리 구조로 계층화)
+  ├  server # express server with mysql
   ├  styles # 글로벌 스타일 및 컬러 변수
   ├  types # 주요 타입 정의
   ├  utils # 유틸 함수와 테스트
