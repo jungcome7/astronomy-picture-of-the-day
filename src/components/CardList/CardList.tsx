@@ -8,8 +8,8 @@ const CardList = () => {
   return (
     <S.Layout>
       <S.Container>
-        {apodList?.map((apod, idx) => (
-          <Card key={idx} apod={apod} />
+        {apodList?.map((apod) => (
+          <Card key={apod.title} apod={apod} />
         ))}
       </S.Container>
     </S.Layout>

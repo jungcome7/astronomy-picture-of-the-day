@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../modules';
+import { RootState } from '../redux';
 
 const useApodList = () => {
   const dispatch = useDispatch();

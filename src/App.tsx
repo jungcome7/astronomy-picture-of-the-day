@@ -1,14 +1,12 @@
 import React from 'react';
-import { Header } from './components/Header';
-import { CardList } from './components/CardList';
 import GlobalStyle from './styles/GlobalStyle';
+import AppRouter from './routes/index';
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <CardList />
+      <AppRouter></AppRouter>
     </>
   );
 };

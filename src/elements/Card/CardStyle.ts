@@ -26,11 +26,11 @@ export const ApodThumbnailVideo = styled.iframe`
 
 export const ApodTitle = styled.div`
   font-size: 18px;
-  margin: 5px 0;
+  margin: 5px 3px;
 `;
 
 export const ApodDate = styled.div`
   font-size: 14px;
   color: grey;
-  margin: 2px 0;
+  margin: 2px 3px;
 `;

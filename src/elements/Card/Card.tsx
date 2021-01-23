@@ -3,7 +3,7 @@ import * as S from './CardStyle';
 import { Apod } from '../../types';
 
 type CardProps = {
-  key: number;
+  key: string;
   apod: Apod;
 };
 

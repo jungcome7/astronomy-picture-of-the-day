@@ -2,7 +2,7 @@ import { takeLatest } from 'redux-saga/effects';
 import { getApod } from '../../api/api';
 import { call, put } from 'redux-saga/effects';
 import { startLoading, finishLoading } from '../loading';
-import { ApodAction } from '../apod/types';
+import { ApodAction } from './types';
 import AT from './actionTypes';
 
 function* getApodSaga(action: ApodAction) {
