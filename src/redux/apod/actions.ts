@@ -14,3 +14,5 @@ export const getApodFailure = createAction(
   AT.GET_APOD_FAILURE,
   (error) => error,
 )();
+
+export const selectApod = createAction(AT.SELECT_APOD, (apodSelected) => apodSelected)();

@@ -4,6 +4,7 @@ import AT from './actionTypes';
 
 const initialState: ApodState = {
   apodList: [],
+  apodSelected: null,
 };
 
 const apod = createReducer<ApodState, ApodAction>(initialState, {
@@ -11,6 +12,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     apodList,
   }),
   [AT.GET_APOD_FAILURE]: (state, { payload: error }) => ({ ...state, error }),
+  [AT.SELECT_APOD]: (state, { payload: apodSelected }) => ({
+    ...state,
+    apodSelected,
+  }),
 });
 
 export default apod;
