@@ -14,14 +14,14 @@
 6. redux-saga 테스트
 <br>
 
-10. formik
-11. 사진 북마킹
-12. 무한 스크롤
-13. debounce, throttle
-14. UI/UX
-15. backend apis
-16. db
-17. 배포
+7. formik
+8. 사진 북마킹
+9. 무한 스크롤
+10. debounce, throttle
+11. UI/UX
+12. backend apis
+13. db
+14. 배포
 
 <br>
  
