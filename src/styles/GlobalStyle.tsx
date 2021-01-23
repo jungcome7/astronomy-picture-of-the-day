@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   body{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    background-color: ${PALETTE.GRAY[1]}
+    background-color: ${PALETTE.GRAY[0]};
   }
 
   a {

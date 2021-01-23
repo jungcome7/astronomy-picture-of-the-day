@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import PALETTE from '../../styles/color-variables';
 
 export const Container = styled.div`
+  width: 330px;
   padding: 15px;
   background-color: ${PALETTE.WHITE};
+  cursor: pointer;
+  border-radius: 5px;
 `;
 export const ApodThumbnail = styled.img`
   width: 300px;
   height: 300px;
+  border-radius: 5px;
 `;
 export const ApodTitle = styled.div`
   font-size: 18px;

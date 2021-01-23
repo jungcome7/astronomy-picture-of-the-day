@@ -6,11 +6,13 @@ import useApodList from '../../hooks/useApodList';
 const CardList = () => {
   const { apodList } = useApodList();
   return (
-    <S.Container>
-      {apodList?.map((apod, idx) => (
-        <Card key={idx} apod={apod} />
-      ))}
-    </S.Container>
+    <S.Layout>
+      <S.Container>
+        {apodList?.map((apod, idx) => (
+          <Card key={idx} apod={apod} />
+        ))}
+      </S.Container>
+    </S.Layout>
   );
 };
 
