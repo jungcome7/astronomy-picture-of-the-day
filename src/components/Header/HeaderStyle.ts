@@ -14,4 +14,5 @@ export const Logo = styled.div`
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
 `;
