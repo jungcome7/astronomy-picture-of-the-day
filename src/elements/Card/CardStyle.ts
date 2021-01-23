@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: ${PALETTE.WHITE};
   cursor: pointer;
   border-radius: 5px;
-  transition: transform 0.5s;
+  transition: all 0.5s;
   &:hover {
     transform: scale(1.03);
   }

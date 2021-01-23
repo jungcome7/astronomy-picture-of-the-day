@@ -18,7 +18,7 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-const DEFAULT_PERIOD = { startDate: '2021-01-01', endDate: '2021-01-22' };
+const DEFAULT_PERIOD = { startDate: '2021-01-18', endDate: '2021-01-22' };
 const loadApod = () => {
   store.dispatch(getApod(DEFAULT_PERIOD));
 };
