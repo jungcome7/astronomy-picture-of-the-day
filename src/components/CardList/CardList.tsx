@@ -7,12 +7,18 @@ import useSearch from '../../hooks/useSearch';
 const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
+
+  const filteredApodList = searchInput.length
+    ? apodList.filter((apod) =>
+        apod.title.toLowerCase().includes(searchInput.toLowerCase()),
+      )
+    : apodList;
+
   return (
     <S.Layout>
       <S.Container>
-        {apodList?.map((apod) => (
-          <Card key={apod.title} apod={apod} />
-        ))}
+        {apodList &&
+          filteredApodList.map((apod) => <Card key={apod.title} apod={apod} />)}
       </S.Container>
     </S.Layout>
   );

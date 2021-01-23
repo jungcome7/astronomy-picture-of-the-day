@@ -22,7 +22,7 @@ const useSearch = () => {
 
   const onChange = useCallback(
     (e: any) => {
-        setInputValue(e.target.value);
+      setInputValue(e.target.value);
     },
     [dispatch],
   );
