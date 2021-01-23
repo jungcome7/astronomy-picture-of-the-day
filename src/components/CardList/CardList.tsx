@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './CardListStyle';
-import { Card } from '../../elements/Card';
+import { Card } from '../Card';
 import useApodList from '../../hooks/useApodList';
 import useSearch from '../../hooks/useSearch';
 
