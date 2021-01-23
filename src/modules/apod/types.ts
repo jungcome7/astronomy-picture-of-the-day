@@ -15,5 +15,5 @@ export type Apod = {
 
 export type ApodState = {
   apodList: Apod[];
-  error?: boolean;
+  error?: unknown;
 };
