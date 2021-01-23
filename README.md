@@ -2,6 +2,7 @@
 - 디테일 페이지 레이아웃
 - 로딩 아이콘
 - date range picker
+- 무한 스크롤
 - server api
 - mysql db
 
