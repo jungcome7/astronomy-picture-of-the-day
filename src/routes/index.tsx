@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { ApodDetail } from '../containers/ApodDetail';
 import { Main } from '../containers/Main';
 
 const AppRouter = () => {
@@ -8,8 +9,8 @@ const AppRouter = () => {
       <Route exact path="/">
         <Main />
       </Route>
-      <Route path="/:apod">
-        {/* <ApodPage /> */}
+      <Route path="/apod/:apod">
+        <ApodDetail />
       </Route>
     </Switch>
   );

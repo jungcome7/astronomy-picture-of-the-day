@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './CardStyle';
 import { Apod } from '../../types';
+import { useHistory } from 'react-router-dom';
 
 type CardProps = {
   key: string;
@@ -9,9 +10,14 @@ type CardProps = {
 
 const Card = ({ apod }: CardProps) => {
   const { title, url, date, media_type } = apod;
+  const history = useHistory();
+
+  const goToApodDetail = () => {
+    history.push(`/apod/${title}`);
+  };
 
   return (
-    <S.Container>
+    <S.Container onClick={goToApodDetail}>
       {media_type === 'video' ? (
         <S.ApodThumbnailVideo src={url} />
       ) : (
