@@ -7,7 +7,6 @@ import useSearch from '../../hooks/useSearch';
 const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
-  console.log(searchInput);
   return (
     <S.Layout>
       <S.Container>

@@ -8,7 +8,6 @@ type CardProps = {
 };
 
 const Card = ({ apod }: CardProps) => {
-  console.log(apod);
   const { title, url, date, media_type } = apod;
 
   return (

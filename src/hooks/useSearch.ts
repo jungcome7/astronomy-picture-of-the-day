@@ -8,31 +8,31 @@ const useSearch = () => {
   const dispatch = useDispatch();
   const searchInput = useSelector((state: RootState) => state.search.input);
 
-  const [debouncedValue, setDebouncedValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(changeInput(debouncedValue));
+      dispatch(changeInput(inputValue));
     }, DEFAULT_DEBOUNCE_TIME);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [debouncedValue]);
+  }, [inputValue]);
 
   const onChange = useCallback(
     (e: any) => {
-      setDebouncedValue(e.target.value);
+        setInputValue(e.target.value);
     },
     [dispatch],
   );
 
   const onRemove = useCallback(() => {
-    setDebouncedValue('');
+    setInputValue('');
     dispatch(removeInput());
   }, [dispatch]);
 
-  return { searchInput, onChange, onRemove };
+  return { inputValue, searchInput, onChange, onRemove };
 };
 
 export default useSearch;
