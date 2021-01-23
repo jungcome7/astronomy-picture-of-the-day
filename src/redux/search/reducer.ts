@@ -8,6 +8,7 @@ const initialState: SearchState = {
 
 const search = createReducer<SearchState, SearchAction>(initialState, {
   [AT.CHANGE_INPUT]: (state, { payload: input }) => ({
+    ...state,
     input,
   }),
   [AT.REMOVE_INPUT]: () => initialState,

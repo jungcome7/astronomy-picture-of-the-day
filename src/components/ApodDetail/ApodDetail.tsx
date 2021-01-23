@@ -1,8 +1,7 @@
-import React from 'react';
-import * as S from './ApodDetailStyle';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux';
+import React, { useEffect } from 'react';
+import useApod from '../../hooks/useApod';
 import { Apod } from '../../types';
+import * as S from './ApodDetailStyle';
 
 type ApodDetailProps = {
   apodSelected: Apod;

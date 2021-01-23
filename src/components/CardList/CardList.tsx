@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './CardListStyle';
 import { Card } from '../Card';
-import useApodList from '../../hooks/useApodList';
+import useApodList from '../../hooks/useApod';
 import useSearch from '../../hooks/useSearch';
 
 const CardList = () => {

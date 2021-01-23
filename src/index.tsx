@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer, { rootSaga } from './redux';
-import { getApod } from './redux/apod';
+import { getApodByPeriod } from './redux/apod';
 import { BrowserRouter } from 'react-router-dom';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -20,7 +20,7 @@ sagaMiddleware.run(rootSaga);
 
 const DEFAULT_PERIOD = { startDate: '2021-01-18', endDate: '2021-01-22' };
 const loadApod = () => {
-  store.dispatch(getApod(DEFAULT_PERIOD));
+  store.dispatch(getApodByPeriod(DEFAULT_PERIOD));
 };
 
 loadApod();

@@ -9,7 +9,12 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-export function getApod({ startDate, endDate }: any) {
+export function getApodByPeriod({ startDate, endDate }: any) {
+  return api.get('', {
+    params: { start_date: startDate, end_date: endDate },
+  });
+}
+export function getApodByDate({ startDate, endDate }: any) {
   return api.get('', {
     params: { start_date: startDate, end_date: endDate },
   });

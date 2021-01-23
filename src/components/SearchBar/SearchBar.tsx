@@ -5,7 +5,6 @@ import { IconSize } from '@channel.io/design-system';
 
 const SearchBar = () => {
   const { inputValue, searchInput, onChange, onRemove } = useSearch();
-
   return (
     <S.Container>
       <S.SearchInputForm
