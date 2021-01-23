@@ -1,14 +1,12 @@
 import { createAction } from 'typesafe-actions';
-
-export const START_LOADING = 'loading/START_LOADING';
-export const FINISH_LOADING = 'loading/FINISH_LOADING';
+import AT from './actionTypes';
 
 export const startLoading = createAction(
-  START_LOADING,
-  (requestType) => requestType
+  AT.START_LOADING,
+  (requestType) => requestType,
 )<string>();
 
 export const finishLoading = createAction(
-  FINISH_LOADING,
-  (requestType) => requestType
+  AT.FINISH_LOADING,
+  (requestType) => requestType,
 )<string>();

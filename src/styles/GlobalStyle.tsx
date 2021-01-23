@@ -1,15 +1,17 @@
 import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
+import PALETTE from './color-variables';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
   
-  {
+  * {
     box-sizing: border-box;
   }
 
   body{
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background-color: ${PALETTE.GRAY[1]}
   }
 
   a {

@@ -1,12 +1,20 @@
 import React from 'react';
 import * as S from './CardStyle';
+import { Apod } from '../../types';
 
-const Card = () => {
+type CardProps = {
+  key: number;
+  apod: Apod;
+};
+
+const Card = ({ apod }: CardProps) => {
+  console.log(apod);
+  const { title, url, date } = apod;
   return (
     <S.Container>
-      <S.ApodThumbnail />
-      <S.ApodTitle>the magentic galaxy</S.ApodTitle>
-      <S.ApodDate> 2020-03-11</S.ApodDate>
+      <S.ApodThumbnail src={url} />
+      <S.ApodTitle>{title}</S.ApodTitle>
+      <S.ApodDate>{date}</S.ApodDate>
     </S.Container>
   );
 };

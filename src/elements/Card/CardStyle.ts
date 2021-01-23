@@ -1,13 +1,13 @@
 import styled from 'styled-components';
+import PALETTE from '../../styles/color-variables';
 
 export const Container = styled.div`
   padding: 15px;
-  background-color: lightgrey;
+  background-color: ${PALETTE.WHITE};
 `;
-export const ApodThumbnail = styled.div`
+export const ApodThumbnail = styled.img`
   width: 300px;
   height: 300px;
-  background-color: grey;
 `;
 export const ApodTitle = styled.div`
   font-size: 18px;

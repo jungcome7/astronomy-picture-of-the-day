@@ -7,7 +7,9 @@ const CardList = () => {
   const { apodList } = useApodList();
   return (
     <S.Container>
-      {apodList?.map(apod => (<Card apod={apod}/>))}
+      {apodList?.map((apod, idx) => (
+        <Card key={idx} apod={apod} />
+      ))}
     </S.Container>
   );
 };
