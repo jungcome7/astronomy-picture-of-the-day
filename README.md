@@ -14,14 +14,15 @@
 6. redux-saga 테스트
 <br>
 
-7. desk 구조 참고하여 구조 짜보기
-8. desk coding convention 참고하여 코딩 스타일 맞춰보기
-9. desk commit history 참고하여 commit message 써보기
-10. formik
-11. 사진 추가/수정/삭제
-12. 무한 스크롤
-13. debounce, throttle
-14. UI/UX
+7. formik
+8. 사진 북마킹
+9. 무한 스크롤
+10. debounce, throttle
+11. UI/UX
+12. backend apis
+13. db
+14. 배포
+
 <br>
  
 ### 주요 라이브러리
@@ -34,12 +35,16 @@
  ├  public  
  ├  src  
   ├  api # API 기본 세팅만
-  ├  elements # redux 연결 x
   ├  components # redux 연결
-  ├  containers  # (optional) routing  
   ├  constants 
-  ├  redux # action, actionType, api, reducer, saga, saga-test, selector
+  ├  containers  # routing(page)
+  ├  elements # redux 연결 x
   ├  hooks # custom hook
+  ├  redux # action, actionType, api, reducer, saga, saga-test, selector
+  ├  routes # react-router (트리 구조로 계층화)
+  ├  server # express server with mysql
+  ├  styles # 글로벌 스타일 및 컬러 변수
+  ├  types # 주요 타입 정의
   ├  utils # 유틸 함수와 테스트
 ```
 <br>
@@ -47,7 +52,6 @@
 ### API
 - Nasa Open APIs - APOD
 - Source : https://api.nasa.gov/
-- API KEY : O5zaBK5eqI3ub8SmVdlb4JdGcewih1y5MiQzt2pD
 - HTTP Requests : GET https://api.nasa.gov/planetary/apod
 - Example Query : https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 <br>
@@ -63,6 +67,4 @@
 - redux 로직과 연결 되어야만 하는 컴포넌트 → component
 - redux 로직 연결 없이 (단독으로) prop을 받아서 렌더링만 → element
 
-[폴더 구조 및 내용 설명](https://www.notion.so/channelio/8d1eea36937b4f32a95e3c40789fddfe)  
-[desk - Redux](https://www.notion.so/channelio/Redux-ddf9204aca9f4ae7b24bfad04888f8a4)  
 ![image](https://user-images.githubusercontent.com/34447105/105371388-ecc99780-5c47-11eb-8f73-f712ad34e1d7.png)
