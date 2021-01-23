@@ -1,7 +1,12 @@
 # astronomy-picture-of-the-day
+- 디테일 페이지 레이아웃
+- 로딩 아이콘
+- date range picker
+- server api
+- mysql db
 
 ### 설명
- NASA에서 공개하는 매일의 우주 사진
+매일의 우주 사진
  
 <br>
  
