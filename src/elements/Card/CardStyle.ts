@@ -8,11 +8,18 @@ export const Container = styled.div`
   cursor: pointer;
   border-radius: 5px;
 `;
-export const ApodThumbnail = styled.img`
+export const ApodThumbnailImg = styled.img`
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;`
+
+export const ApodThumbnailVideo = styled.iframe`
   width: 300px;
   height: 300px;
   border-radius: 5px;
 `;
+
+
 export const ApodTitle = styled.div`
   font-size: 18px;
   margin: 5px 0;
