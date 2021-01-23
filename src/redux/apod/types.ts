@@ -6,6 +6,5 @@ export type ApodAction = ActionType<typeof actions>;
 
 export type ApodState = {
   apodList: Apod[];
-  apodSelected?: Apod | null;
   error?: unknown;
 };

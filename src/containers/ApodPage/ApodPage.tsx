@@ -3,30 +3,19 @@ import * as S from './ApodPageStyle';
 import { Header } from '../../elements/Header';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
+import { ApodDetail } from '../../components/ApodDetail';
 
-const ApodDetail = () => {
+const ApodPage = () => {
   const apodSelected = useSelector(
     (state: RootState) => state.apod.apodSelected,
   );
-  console.log(apodSelected);
-
-  // if (apodSelected) {
-  //   const {
-  //     title,
-  //     copyright,
-  //     date,
-  //     explanantion,
-  //     media_type,
-  //     url,
-  //     hdurl,
-  //   } = apodSelected;
 
   return (
     <S.Container>
       <Header isSearchBar={false} isDatePicker={false} />
-      {apodSelected && <ApodDetail />}
+      {apodSelected && <ApodDetail apodSelected={apodSelected} />}
     </S.Container>
   );
 };
 
-export default ApodDetail;
+export default ApodPage;
