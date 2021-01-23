@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchBar } from '../../elements/SearchBar';
+import { SearchBar } from '../SearchBar';
 import { DatePicker } from '../../elements/DatePicker';
 import * as S from './HeaderStyle';
 
