@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeSearchInput } from '../modules/searchInput';
+import { changeInput } from '../redux/search';
+import { DEFAULT_DEBOUNCE_TIME } from '../constants';
 
-const useDebounce = (delay = 300) => {
+const useDebounce = (delay = DEFAULT_DEBOUNCE_TIME) => {
   const dispatch = useDispatch();
-  const [debouncedValue, setDebouncedValue] = useState('');
+  const [debouncedValue, setDebouncedValue] = useState<string>('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(changeSearchInput(debouncedValue));
+      dispatch(changeInput(debouncedValue));
     }, delay);
 
     return () => {
@@ -16,7 +17,7 @@ const useDebounce = (delay = 300) => {
     };
   }, [debouncedValue]);
 
-  return { debouncedValue, setDebouncedValue };
+  return { setDebouncedValue };
 };
 
 export default useDebounce;
