@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { APODS_PER_API_CALL } from '../constants';
 
 const URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = 'O5zaBK5eqI3ub8SmVdlb4JdGcewih1y5MiQzt2pD';
@@ -14,15 +15,23 @@ type Period = {
   endDate: string;
 };
 
-export function getApodByPeriod({ startDate, endDate }: Period) {
+export const getApodByPeriod = ({ startDate, endDate }: Period) => {
   return api.get('', {
     params: { start_date: startDate, end_date: endDate },
   });
-}
-export function getApodByDate(date: string) {
+};
+export const getApodByDate = (date: string) => {
   return api.get('', {
-    params: { date: date },
+    params: { date },
   });
-}
+};
+
+export const getApodByYear = (year: number) => {
+  const initialDate = `${year}-01-01`;
+
+  return api.get('', {
+    params: { start_date: initialDate, count: APODS_PER_API_CALL },
+  });
+};
 
 export default api;

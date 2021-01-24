@@ -22,6 +22,9 @@ const DEFAULT_PERIOD = { startDate: '2021-01-18', endDate: '2021-01-22' };
 const loadApod = () => {
   store.dispatch(getApodByPeriod(DEFAULT_PERIOD));
 };
+// const loadApod = () => {
+//   store.dispatch(getApodByYear(2021));
+// };
 
 loadApod();
 
