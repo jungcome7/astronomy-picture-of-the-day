@@ -5,6 +5,8 @@ import AT from './actionTypes';
 const initialState: ApodState = {
   apodList: [],
   apodSelected: null,
+  year: 2021,
+  page: 1,
 };
 
 const apod = createReducer<ApodState, ApodAction>(initialState, {
