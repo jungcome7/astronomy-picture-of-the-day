@@ -1,6 +1,12 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { getApodByYear, removeApodList, setPage, setYear } from '../redux/apod';
+import {
+  finishLoadApods,
+  getApodByYear,
+  removeApodList,
+  setPage,
+  setYear,
+} from '../redux/apod';
 
 const useSelect = () => {
   const dispatch = useDispatch();
@@ -10,6 +16,7 @@ const useSelect = () => {
       const year = Number(e.target.value);
       dispatch(removeApodList());
       dispatch(setPage(1));
+      dispatch(finishLoadApods(false));
       dispatch(setYear(year));
       dispatch(getApodByYear(year));
     },

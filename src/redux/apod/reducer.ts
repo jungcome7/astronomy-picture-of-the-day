@@ -51,9 +51,9 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     apodList: [],
   }),
-  [AT.FINISH_LOAD_APODS]: (state) => ({
+  [AT.FINISH_LOAD_APODS]: (state, { payload: isFinish }) => ({
     ...state,
-    finishLoad: true,
+    finishLoad: isFinish,
   }),
 });
 

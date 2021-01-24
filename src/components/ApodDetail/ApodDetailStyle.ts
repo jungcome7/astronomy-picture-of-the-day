@@ -4,7 +4,7 @@ import { Icon as CIcon } from '@channel.io/design-system';
 
 export const Container = styled.div`
   width: 1200px;
-  margin: 20px auto;
+  margin: 80px auto;
   padding: 10px;
   background-color: ${PALETTE.WHITE};
   border-radius: 10px;

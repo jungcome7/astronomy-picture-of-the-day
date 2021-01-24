@@ -38,7 +38,7 @@ const useApod = () => {
 
     if (new Date(endDate).getDate() >= new Date().getDate()) {
       endDate = new Date().toISOString().split('T')[0];
-      dispatch(finishLoadApods());
+      dispatch(finishLoadApods(true));
     }
 
     dispatch(getApodByPeriod({ startDate, endDate }));

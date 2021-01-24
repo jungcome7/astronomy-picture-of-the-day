@@ -4,8 +4,9 @@ import PALETTE from '../../styles/color-variables';
 
 export const Layout = styled.div`
   width: 1100px;
-  margin: 0 auto;
+  margin: 60px auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -32,9 +33,18 @@ const loadingAnimation = css`
   }
 `;
 
+export const IconWrapper = styled.div`
+  width: 1100px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Icon = styled(CIcon)`
   position: absolute;
   color: ${PALETTE.GRAY[5]};
-  top: 30vh;
+  top: 20vh;
   ${loadingAnimation};
 `;

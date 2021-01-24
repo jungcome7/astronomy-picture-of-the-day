@@ -16,8 +16,12 @@ const CardList = () => {
 
   useScroll(loadApods);
 
-  const loading = useSelector(
+  const initialLoading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_YEAR'],
+  );
+
+  const scrollLoading = useSelector(
+    (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
   );
 
   const filteredApodList = searchInput.length
@@ -28,13 +32,18 @@ const CardList = () => {
   return (
     <>
       <S.Layout>
-        {loading && <S.Icon name="rotate" size={IconSize.L} />}
+        {initialLoading && <S.Icon name="rotate" size={IconSize.L} />}
         <S.Container>
           {apodList &&
             filteredApodList.map((apod) => (
               <Card key={apod.date} apod={apod} />
             ))}
         </S.Container>
+        {scrollLoading && (
+          <S.IconWrapper>
+            <S.Icon name="rotate" size={IconSize.L} />
+          </S.IconWrapper>
+        )}
       </S.Layout>
     </>
   );
