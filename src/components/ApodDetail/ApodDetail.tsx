@@ -18,7 +18,7 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
       title,
       copyright,
       date,
-      explanantion,
+      explanation,
       hdurl,
       media_type,
       service_version,
@@ -27,13 +27,19 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
 
     return (
       <S.Container>
-        <S.ApodTitle>{title}</S.ApodTitle>
-        {media_type === 'video' ? (
-          <S.ApodThumbnailVideo src={url} />
-        ) : (
-          <S.ApodThumbnailImg src={url} />
-        )}
-        <S.ApodDate>{date}</S.ApodDate>
+        <S.Wrapper>
+          <S.ApodTitle>{title}</S.ApodTitle>
+          <S.LinkToHDImg href={hdurl} target="_blank">
+            HD Image
+          </S.LinkToHDImg>
+          {media_type === 'video' ? (
+            <S.ApodVideo src={url} />
+          ) : (
+            <S.ApodImg src={url} />
+          )}
+          <S.ApodDate>{date}</S.ApodDate>
+          <S.ApodExplanation>{explanation}</S.ApodExplanation>
+        </S.Wrapper>
       </S.Container>
     );
   }
