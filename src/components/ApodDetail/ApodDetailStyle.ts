@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import PALETTE from '../../styles/color-variables';
+import { Icon as CIcon } from '@channel.io/design-system';
 
 export const Container = styled.div`
   width: 1200px;
@@ -26,12 +27,20 @@ export const ApodTitle = styled.div`
 
 export const LinkToHDImg = styled.a`
   position: absolute;
-  color: blue;
   right: 54px;
   top: 20px;
   font-weight: bold;
   font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${PALETTE.GRAY[5]};
+  &:hover {
+    color: ${PALETTE.BLACK};
+  }
 `;
+
+export const Icon = styled(CIcon)``;
 
 export const ApodImg = styled.img``;
 

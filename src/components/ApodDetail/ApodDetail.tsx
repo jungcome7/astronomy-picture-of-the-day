@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import useApod from '../../hooks/useApod';
 import * as S from './ApodDetailStyle';
+import { IconSize } from '@channel.io/design-system';
 
 type ApodDetailProps = {
   date: string;
@@ -29,7 +30,8 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
         <S.Wrapper>
           <S.ApodTitle>{title}</S.ApodTitle>
           <S.LinkToHDImg href={hdurl} target="_blank">
-            HD Image
+            HD
+            <S.Icon name="in" size={IconSize.S} />
           </S.LinkToHDImg>
           {media_type === 'video' ? (
             <S.ApodVideo src={url} />

@@ -3,10 +3,13 @@ import * as S from './CardListStyle';
 import { Card } from '../Card';
 import useApodList from '../../hooks/useApod';
 import useSearch from '../../hooks/useSearch';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux';
 
 const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
+  const { loading } = useSelector((state: RootState) => state.loading);
 
   const filteredApodList = searchInput.length
     ? apodList.filter((apod) =>
