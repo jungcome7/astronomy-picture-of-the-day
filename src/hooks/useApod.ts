@@ -33,6 +33,7 @@ const useApod = () => {
   const loadApods = useCallback(() => {
     dispatch(setPage(page + 1));
 
+    console.log(year);
     // eslint-disable-next-line prefer-const
     let { startDate, endDate } = getPeriod(year, page + 1);
     console.log(startDate, endDate);
@@ -48,7 +49,7 @@ const useApod = () => {
     }
 
     dispatch(getApodByPeriod({ startDate, endDate }));
-  }, [dispatch, page, year]);
+  }, [dispatch, year, page]);
 
   return {
     apodList,

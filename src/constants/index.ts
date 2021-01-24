@@ -7,4 +7,4 @@ export const YEARS = Array(10)
 
 export const APODS_PER_API_CALL = 9;
 
-export const SCROLL_Y_RATIO = 0.95;
+export const SCROLL_Y_RATIO = 0.9;

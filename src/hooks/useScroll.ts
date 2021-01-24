@@ -14,10 +14,12 @@ const useScroll = (callback: () => void) => {
       const clientHeight = window.scrollY + window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       if (clientHeight > documentHeight * SCROLL_Y_RATIO) {
-        callback();
         window.removeEventListener('scroll', loadApodsController);
+        callback();
       }
     };
+
+    window.addEventListener('scroll', loadApodsController);
 
     if (finishLoad) {
       window.removeEventListener('scroll', loadApodsController);
@@ -29,7 +31,6 @@ const useScroll = (callback: () => void) => {
       return;
     }
 
-    window.addEventListener('scroll', loadApodsController);
     return () => {
       window.removeEventListener('scroll', loadApodsController);
     };
