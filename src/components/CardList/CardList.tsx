@@ -9,7 +9,7 @@ import { RootState } from '../../redux';
 const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
-  const { loading } = useSelector((state: RootState) => state.loading);
+  const loading = useSelector((state: RootState) => state.loading);
 
   const filteredApodList = searchInput.length
     ? apodList.filter((apod) =>
