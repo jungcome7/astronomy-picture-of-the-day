@@ -4,7 +4,6 @@ import PALETTE from '../../styles/color-variables';
 export const Container = styled.div`
   background-color: ${PALETTE.WHITE};
   height: 60px;
-  min-width: 1100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +11,7 @@ export const Container = styled.div`
   top: 0;
   width: 100%;
   z-index: 3;
+  /* overflow: scroll; */
 `;
 
 export const Logo = styled.div`

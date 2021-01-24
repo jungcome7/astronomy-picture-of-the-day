@@ -5,11 +5,11 @@ import { RootState } from '../redux';
 
 const useScroll = (callback: () => void) => {
   const finishLoad = useSelector((state: RootState) => state.apod.finishLoad);
+  const scrollLoading = useSelector(
+    (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
+  );
 
   useEffect(() => {
-    if (finishLoad) {
-      return;
-    }
     const loadApodsController = () => {
       const clientHeight = window.scrollY + window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
@@ -18,6 +18,16 @@ const useScroll = (callback: () => void) => {
         window.removeEventListener('scroll', loadApodsController);
       }
     };
+
+    if (finishLoad) {
+      window.removeEventListener('scroll', loadApodsController);
+      return;
+    }
+
+    if (scrollLoading) {
+      window.removeEventListener('scroll', loadApodsController);
+      return;
+    }
 
     window.addEventListener('scroll', loadApodsController);
     return () => {

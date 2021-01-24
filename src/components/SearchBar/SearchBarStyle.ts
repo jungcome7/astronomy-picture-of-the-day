@@ -14,6 +14,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 1100px) {
+    width: 300px;
+  }
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const SearchInputForm = styled.input`
