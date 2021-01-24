@@ -28,17 +28,19 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
     return (
       <S.Container>
         <S.Wrapper>
+          <S.ApodDate>{date}</S.ApodDate>
           <S.ApodTitle>{title}</S.ApodTitle>
-          <S.LinkToHDImg href={hdurl} target="_blank">
-            HD
-            <S.Icon name="in" size={IconSize.S} />
-          </S.LinkToHDImg>
+          {hdurl && (
+            <S.LinkToHDImg href={hdurl} target="_blank">
+              HD
+              <S.Icon name="in" size={IconSize.S} />
+            </S.LinkToHDImg>
+          )}
           {media_type === 'video' ? (
             <S.ApodVideo src={url} />
           ) : (
             <S.ApodImg src={url} />
           )}
-          <S.ApodDate>{date}</S.ApodDate>
           {copyright && <S.ApodCopyright>©{copyright}</S.ApodCopyright>}
           <S.ApodExplanation>{explanation}</S.ApodExplanation>
         </S.Wrapper>

@@ -20,10 +20,17 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
+
 export const ApodTitle = styled.div`
   font-size: 28px;
   font-weight: 600;
-  margin: 14px 0 24px 0;
+  margin: 6px 0 24px 0;
+`;
+
+export const ApodDate = styled.div`
+  font-size: 18px;
+  color: ${PALETTE.GRAY[4]};
+  margin: 12px 0 2px 0;
 `;
 
 export const LinkToHDImg = styled.a`
@@ -46,19 +53,13 @@ export const Icon = styled(CIcon)``;
 export const ApodImg = styled.img``;
 
 export const ApodVideo = styled.iframe`
-  width:1000px;
-  height:600px;
-`;
-
-export const ApodDate = styled.div`
-  font-size: 18px;
-  color: ${PALETTE.GRAY[4]};
-  margin: 8px;
+  width: 1000px;
+  height: 600px;
 `;
 
 export const ApodCopyright = styled.div`
   color: ${PALETTE.GRAY[4]};
-  margin: 0 20px;
+  margin: 8px;
 `;
 
 export const ApodExplanation = styled.p`

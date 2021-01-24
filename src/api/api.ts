@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { APODS_PER_API_CALL } from '../constants';
 
 const URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = 'O5zaBK5eqI3ub8SmVdlb4JdGcewih1y5MiQzt2pD';
