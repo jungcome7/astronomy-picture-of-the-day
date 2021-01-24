@@ -15,6 +15,7 @@ type Period = {
 };
 
 export const getApodByPeriod = ({ startDate, endDate }: Period) => {
+  console.log(startDate, endDate);
   return api.get('', {
     params: { start_date: startDate, end_date: endDate },
   });

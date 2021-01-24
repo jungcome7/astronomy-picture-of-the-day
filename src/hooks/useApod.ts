@@ -35,8 +35,14 @@ const useApod = () => {
 
     // eslint-disable-next-line prefer-const
     let { startDate, endDate } = getPeriod(year, page + 1);
+    console.log(startDate, endDate);
 
-    if (new Date(endDate).getDate() >= new Date().getDate()) {
+    const now = new Date();
+
+    if (
+      year === now.getFullYear() &&
+      new Date(endDate).getDate() >= now.getDate()
+    ) {
       endDate = new Date().toISOString().split('T')[0];
       dispatch(finishLoadApods(true));
     }
