@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import useApod from '../../hooks/useApod';
 import * as S from './ApodDetailStyle';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
 
 type ApodDetailProps = {

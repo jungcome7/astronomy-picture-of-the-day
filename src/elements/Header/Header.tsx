@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchBar } from '../../components/SearchBar';
-import { DatePicker } from '../DatePicker';
+import { DatePicker } from '../../components/DatePicker';
 import * as S from './HeaderStyle';
 import { Link } from 'react-router-dom';
 

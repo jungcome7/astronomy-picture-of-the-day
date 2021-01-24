@@ -13,18 +13,17 @@ export const Container = styled.div`
   }
 `;
 
-
 export const ApodThumbnailImg = styled.img`
   width: 300px;
   height: 300px;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 5px;
 `;
 
 export const ApodThumbnailVideo = styled.iframe`
   width: 300px;
   height: 300px;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 5px;
 `;
 
