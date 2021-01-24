@@ -4,8 +4,8 @@ import * as actions from './actions';
 export type LoadingAction = ActionType<typeof actions>;
 
 export type Loading = {
-  ['GET_SUCCESS']?: boolean;
-  ['GET_FAILURE']?: boolean;
+  ['apod/GET_APOD_BY_PERIOD']?: boolean;
+  ['apod/GET_APOD_BY_DATE']?: boolean;
 };
 
 export type LoadingState = Loading;

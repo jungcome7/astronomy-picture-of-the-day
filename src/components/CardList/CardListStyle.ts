@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Icon as CIcon } from '@channel.io/design-system';
+import PALETTE from '../../styles/color-variables';
 
 export const Layout = styled.div`
   width: 1100px;
@@ -6,6 +8,7 @@ export const Layout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const Container = styled.div`
@@ -15,4 +18,23 @@ export const Container = styled.div`
   grid-row-gap: 20px;
   max-width: 1100px;
   margin: 20px;
+`;
+
+const loadingAnimation = css`
+  animation: rotateAnimation 1s linear infinite;
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+`;
+
+export const Icon = styled(CIcon)`
+  position: absolute;
+  color: ${PALETTE.GRAY[5]};
+  top: 30vh;
+  ${loadingAnimation};
 `;
