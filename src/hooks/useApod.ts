@@ -7,7 +7,7 @@ import {
   initializeSelectedApod,
   setPage,
 } from '../redux/apod';
-import { getPeriod } from '../utils/timeParser';
+import { getPeriod } from '../utils/getPeriod';
 import useScroll from './useScroll';
 
 const useApod = () => {
@@ -36,7 +36,13 @@ const useApod = () => {
     dispatch(getApodByPeriod(getPeriod(year, page + 1)));
   }, [dispatch]);
 
-  return { apodList, apodSelected, getApodSelected, removeSelectedApod };
+  return {
+    apodList,
+    apodSelected,
+    getApodSelected,
+    removeSelectedApod,
+    loadApods,
+  };
 };
 
 export default useApod;
