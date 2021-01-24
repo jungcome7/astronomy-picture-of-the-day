@@ -28,6 +28,14 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     apodSelected: null,
   }),
+  [AT.GET_APOD_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
+    ...state,
+    apodList,
+  }),
+  [AT.GET_APOD_BY_YEAR_FAILURE]: (state, { payload: error }) => ({
+    ...state,
+    error,
+  }),
 });
 
 export default apod;

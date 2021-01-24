@@ -38,3 +38,18 @@ export const initializeSelectedApod = createAction(
   AT.INITIALIZE_SELECTED_APOD,
   () => ({}),
 )();
+
+export const getApodByYear = createAction(
+  AT.GET_APOD_BY_YEAR,
+  (year) => year,
+)();
+
+export const getApodByYearSuccess = createAction(
+  AT.GET_APOD_BY_YEAR_SUCCESS,
+  (apodList) => apodList,
+)();
+
+export const getApodByYearFailure = createAction(
+  AT.GET_APOD_BY_YEAR_FAILURE,
+  (error) => error,
+)();
