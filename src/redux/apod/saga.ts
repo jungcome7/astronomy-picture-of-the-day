@@ -59,7 +59,7 @@ function* getApodByYearSaga(action: ApodAction) {
     });
   }
 
-  yield put(finishLoading(AT.GET_APOD_BY_PERIOD));
+  yield put(finishLoading(AT.GET_APOD_BY_YEAR));
 }
 
 export function* apodSaga() {

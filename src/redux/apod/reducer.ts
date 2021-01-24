@@ -42,6 +42,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     year,
   }),
+  [AT.REMOVE_APOD_LIST]: (state) => ({
+    ...state,
+    apodList: [],
+  }),
 });
 
 export default apod;

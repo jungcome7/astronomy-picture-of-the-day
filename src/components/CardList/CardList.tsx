@@ -11,7 +11,7 @@ const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
   const loading = useSelector(
-    (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
+    (state: RootState) => state.loading['apod/GET_APOD_BY_YEAR'],
   );
 
   const filteredApodList = searchInput.length
@@ -19,7 +19,7 @@ const CardList = () => {
         apod.title.toLowerCase().includes(searchInput.toLowerCase()),
       )
     : apodList;
-
+  console.log(loading);
   return (
     <>
       <S.Layout>

@@ -55,3 +55,5 @@ export const getApodByYearFailure = createAction(
 )();
 
 export const setYear = createAction(AT.SET_YEAR, (year) => year)();
+
+export const removeApodList = createAction(AT.REMOVE_APOD_LIST, () => [])();
