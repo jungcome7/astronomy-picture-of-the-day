@@ -38,6 +38,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     error,
   }),
+  [AT.SET_YEAR]: (state, { payload: year }) => ({
+    ...state,
+    year,
+  }),
 });
 
 export default apod;

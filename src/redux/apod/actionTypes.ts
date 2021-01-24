@@ -12,6 +12,8 @@ enum ActionTypes {
   GET_APOD_BY_YEAR = 'apod/GET_APOD_BY_YEAR',
   GET_APOD_BY_YEAR_SUCCESS = 'apod/GET_APOD_BY_YEAR_SUCCESS',
   GET_APOD_BY_YEAR_FAILURE = 'apod/GET_APOD_BY_YEAR_FAILURE',
+
+  SET_YEAR = 'apod/SET_YEAR',
 }
 
 export default ActionTypes;

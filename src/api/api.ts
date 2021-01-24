@@ -27,13 +27,13 @@ export const getApodByDate = (date: string) => {
 };
 
 export const getApodByYear = (year: number) => {
-  let call = 1;
-  let month = 1;
-  let date = 1;
-  const initialDate = `${year}-${month}-${date}`;
+  // let call = 1;
+  // let month = 1;
+  // let date = 1;
+  // const initialDate = `${year}-${month}-${date}`;
 
   return api.get('', {
-    params: { start_date: initialDate, end_date: },
+    params: { start_date: year + '-01-01', end_date: year + '-01-09' },
   });
 };
 

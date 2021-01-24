@@ -46,9 +46,8 @@ export const Icon = styled(CIcon)``;
 export const ApodImg = styled.img``;
 
 export const ApodVideo = styled.iframe`
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
+  width:1000px;
+  height:600px;
 `;
 
 export const ApodDate = styled.div`

@@ -53,3 +53,5 @@ export const getApodByYearFailure = createAction(
   AT.GET_APOD_BY_YEAR_FAILURE,
   (error) => error,
 )();
+
+export const setYear = createAction(AT.SET_YEAR, (year) => year)();
