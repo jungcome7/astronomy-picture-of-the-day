@@ -21,7 +21,6 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
       explanation,
       hdurl,
       media_type,
-      service_version,
       url,
     } = apodSelected;
 
@@ -38,6 +37,7 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
             <S.ApodImg src={url} />
           )}
           <S.ApodDate>{date}</S.ApodDate>
+          {copyright && <S.ApodCopyright>©{copyright}</S.ApodCopyright>}
           <S.ApodExplanation>{explanation}</S.ApodExplanation>
         </S.Wrapper>
       </S.Container>

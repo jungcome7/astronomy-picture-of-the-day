@@ -14,8 +14,8 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width:100%;
-  position:relative;
+  width: 100%;
+  position: relative;
 `;
 
 export const ApodTitle = styled.div`
@@ -26,15 +26,14 @@ export const ApodTitle = styled.div`
 
 export const LinkToHDImg = styled.a`
   position: absolute;
-  color:blue;
-  right:54px;
-  top:20px;
-  font-weight:bold;
-  font-size:20px;
+  color: blue;
+  right: 54px;
+  top: 20px;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
-export const ApodImg = styled.img`
-`;
+export const ApodImg = styled.img``;
 
 export const ApodVideo = styled.iframe`
   width: 300px;
@@ -44,15 +43,20 @@ export const ApodVideo = styled.iframe`
 
 export const ApodDate = styled.div`
   font-size: 18px;
-  color: grey;
-  margin:8px;
+  color: ${PALETTE.GRAY[4]};
+  margin: 8px;
+`;
+
+export const ApodCopyright = styled.div`
+  color: ${PALETTE.GRAY[4]};
+  margin: 0 20px;
 `;
 
 export const ApodExplanation = styled.p`
-  width:100%;
+  width: 100%;
   font-size: 22px;
   padding: 0 60px;
   margin: 10px 0;
-  line-height: 30px;
+  line-height: 34px;
   overflow-wrap: break-word;
 `;
