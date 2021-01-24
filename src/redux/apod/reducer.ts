@@ -42,6 +42,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     year,
   }),
+  [AT.SET_PAGE]: (state, { payload: page }) => ({
+    ...state,
+    page,
+  }),
   [AT.REMOVE_APOD_LIST]: (state) => ({
     ...state,
     apodList: [],
