@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
+import { SCROLL_Y_RATIO } from '../constants';
 
-const useScroll = (scrollYRatio: number, callback: () => void) => {
+const useScroll = (callback: () => void) => {
   useEffect(() => {
     const loadApodsController = () => {
       const clientHeight = window.scrollY + window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      if (clientHeight > documentHeight * scrollYRatio) {
+      if (clientHeight > documentHeight * SCROLL_Y_RATIO) {
         callback();
         window.removeEventListener('scroll', loadApodsController);
       }
@@ -15,7 +16,7 @@ const useScroll = (scrollYRatio: number, callback: () => void) => {
     return () => {
       window.removeEventListener('scroll', loadApodsController);
     };
-  }, [callback, scrollYRatio]);
+  }, [callback, SCROLL_Y_RATIO]);
 };
 
 export default useScroll;

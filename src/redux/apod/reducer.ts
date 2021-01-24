@@ -12,7 +12,7 @@ const initialState: ApodState = {
 const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
     ...state,
-    apodList,
+    apodList: [...state.apodList, ...apodList],
   }),
   [AT.GET_APOD_BY_PERIOD_FAILURE]: (state, { payload: error }) => ({
     ...state,
