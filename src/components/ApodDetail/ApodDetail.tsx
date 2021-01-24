@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import useApod from '../../hooks/useApod';
 import * as S from './ApodDetailStyle';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
 
 type ApodDetailProps = {
@@ -45,7 +47,13 @@ const ApodDetail = ({ date }: ApodDetailProps) => {
       </S.Container>
     );
   }
-  return <S.Container />;
+  return (
+    <S.Container>
+      <S.Wrapper>
+        <S.LoadingIcon name="rotate" size={IconSize.L} />
+      </S.Wrapper>
+    </S.Container>
+  );
 };
 
 export default ApodDetail;

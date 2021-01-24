@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PALETTE from '../../styles/color-variables';
 import { Icon as CIcon } from '@channel.io/design-system';
 
@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding: 10px;
   background-color: ${PALETTE.WHITE};
   border-radius: 10px;
+  min-height: 600px;
 `;
 
 export const Wrapper = styled.div`
@@ -68,4 +69,23 @@ export const ApodExplanation = styled.p`
   margin: 10px 0;
   line-height: 34px;
   overflow-wrap: break-word;
+`;
+
+const loadingAnimation = css`
+  animation: rotateAnimation 1s linear infinite;
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+`;
+
+export const LoadingIcon = styled(CIcon)`
+  position: absolute;
+  color: ${PALETTE.GRAY[5]};
+  top: 30vh;
+  ${loadingAnimation};
 `;
