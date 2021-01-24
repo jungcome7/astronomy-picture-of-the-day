@@ -19,9 +19,9 @@ export const Wrapper = styled.div`
 `;
 
 export const ApodTitle = styled.div`
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
-  margin: 14px 0 30px 0;
+  margin: 14px 0 24px 0;
 `;
 
 export const LinkToHDImg = styled.a`
@@ -34,7 +34,6 @@ export const LinkToHDImg = styled.a`
 `;
 
 export const ApodImg = styled.img`
-  padding:20px;
 `;
 
 export const ApodVideo = styled.iframe`
@@ -44,15 +43,16 @@ export const ApodVideo = styled.iframe`
 `;
 
 export const ApodDate = styled.div`
-  font-size: 14px;
+  font-size: 18px;
   color: grey;
-  margin: 2px 3px;
+  margin:8px;
 `;
 
 export const ApodExplanation = styled.p`
   width:100%;
-  font-size: 20px;
-  padding: 0 54px;
-  line-height: 28px;
+  font-size: 22px;
+  padding: 0 60px;
+  margin: 10px 0;
+  line-height: 30px;
   overflow-wrap: break-word;
 `;
