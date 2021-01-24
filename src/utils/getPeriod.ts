@@ -15,6 +15,6 @@ export const getPeriod = (year: number, page: number): Period => {
 
   const startDate = new Date(startDateTime).toISOString().split('T')[0];
   const endDate = new Date(endDateTime).toISOString().split('T')[0];
-  console.log(startDate, endDate);
+
   return { startDate, endDate };
 };

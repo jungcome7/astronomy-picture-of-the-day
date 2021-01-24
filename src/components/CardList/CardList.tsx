@@ -13,6 +13,7 @@ const CardList = () => {
   const { apodList } = useApodList();
   const { searchInput } = useSearch();
   const { loadApods } = useApod();
+
   useScroll(loadApods);
 
   const loading = useSelector(

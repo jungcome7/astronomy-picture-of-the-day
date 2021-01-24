@@ -17,6 +17,8 @@ enum ActionTypes {
   SET_PAGE = 'apod/SET_PAGE',
 
   REMOVE_APOD_LIST = 'apod/REMOVE_APOD_LIST',
+
+  FINISH_LOAD_APODS = 'apod/FINISH_LOAD_APODS'
 }
 
 export default ActionTypes;

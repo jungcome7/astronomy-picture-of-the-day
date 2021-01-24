@@ -58,3 +58,5 @@ export const setYear = createAction(AT.SET_YEAR, (year) => year)();
 export const setPage = createAction(AT.SET_PAGE, (page) => page)();
 
 export const removeApodList = createAction(AT.REMOVE_APOD_LIST, () => [])();
+
+export const finishLoadApods = createAction(AT.FINISH_LOAD_APODS, () => ({}))();

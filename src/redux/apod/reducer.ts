@@ -7,6 +7,7 @@ const initialState: ApodState = {
   apodSelected: null,
   year: 2021,
   page: 1,
+  finishLoad: false,
 };
 
 const apod = createReducer<ApodState, ApodAction>(initialState, {
@@ -49,6 +50,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.REMOVE_APOD_LIST]: (state) => ({
     ...state,
     apodList: [],
+  }),
+  [AT.FINISH_LOAD_APODS]: (state) => ({
+    ...state,
+    finishLoad: true,
   }),
 });
 

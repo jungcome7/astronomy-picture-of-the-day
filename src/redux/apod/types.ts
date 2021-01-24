@@ -9,5 +9,6 @@ export type ApodState = {
   apodSelected?: Apod | null;
   year: number;
   page: number;
+  finishLoad: boolean;
   error?: unknown;
 };

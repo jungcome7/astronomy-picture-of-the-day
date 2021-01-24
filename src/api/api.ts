@@ -26,9 +26,8 @@ export const getApodByDate = (date: string) => {
 };
 
 export const getApodByYear = (year: number) => {
-
   return api.get('', {
-    params: { start_date: year + '-01-01', end_date: year + '-01-09' },
+    params: { start_date: `${year}-01-01`, end_date: `${year}-01-09` },
   });
 };
 
