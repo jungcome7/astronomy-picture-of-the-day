@@ -37,9 +37,7 @@ const useApod = () => {
     let { startDate, endDate } = getPeriod(year, page + 1);
 
     if (new Date(endDate).getDate() >= new Date().getDate()) {
-      console.log('걸림');
       endDate = new Date().toISOString().split('T')[0];
-      console.log('새로운 날짜:', endDate);
       dispatch(finishLoadApods());
     }
 

@@ -25,7 +25,6 @@ const CardList = () => {
         apod.title.toLowerCase().includes(searchInput.toLowerCase()),
       )
     : apodList;
-  console.log(loading);
   return (
     <>
       <S.Layout>
