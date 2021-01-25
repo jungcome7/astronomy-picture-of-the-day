@@ -14,8 +14,8 @@ export const getApodByPeriodSuccess = createAction(
   (apodList) => apodList,
 )();
 
-export const getApodByPeriodFailure = createAction(
-  AT.GET_APOD_BY_PERIOD_FAILURE,
+export const getApodByPeriodError = createAction(
+  AT.GET_APOD_BY_PERIOD_ERROR,
   (error) => error,
 )();
 
@@ -29,8 +29,8 @@ export const getApodByDateSuccess = createAction(
   (apodSelected) => apodSelected,
 )();
 
-export const getApodByDateFailure = createAction(
-  AT.GET_APOD_BY_DATE_FAILURE,
+export const getApodByDateError = createAction(
+  AT.GET_APOD_BY_DATE_ERROR,
   (error) => error,
 )();
 
@@ -49,10 +49,16 @@ export const getApodByYearSuccess = createAction(
   (apodList) => apodList,
 )();
 
-export const getApodByYearFailure = createAction(
-  AT.GET_APOD_BY_YEAR_FAILURE,
+export const getApodByYearError = createAction(
+  AT.GET_APOD_BY_YEAR_ERROR,
   (error) => error,
 )();
 
 export const setYear = createAction(AT.SET_YEAR, (year) => year)();
+
 export const setPage = createAction(AT.SET_PAGE, (page) => page)();
+
+export const setInitialPageByYear = createAction(
+  AT.SET_INITIAL_PAGE_BY_YEAR,
+  (year) => year,
+)();

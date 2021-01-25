@@ -12,13 +12,12 @@ const initialState: ApodState = {
 
 // switch case
 
-
 const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
     ...state,
     apodList: [...state.apodList, ...apodList],
   }),
-  [AT.GET_APOD_BY_PERIOD_FAILURE]: (state, { payload: error }) => ({
+  [AT.GET_APOD_BY_PERIOD_ERROR]: (state, { payload: error }) => ({
     ...state,
     error,
   }),
@@ -26,7 +25,7 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     apodSelected,
   }),
-  [AT.GET_APOD_BY_DATE_FAILURE]: (state, { payload: error }) => ({
+  [AT.GET_APOD_BY_DATE_ERROR]: (state, { payload: error }) => ({
     ...state,
     error,
   }),
@@ -38,7 +37,7 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     apodList,
   }),
-  [AT.GET_APOD_BY_YEAR_FAILURE]: (state, { payload: error }) => ({
+  [AT.GET_APOD_BY_YEAR_ERROR]: (state, { payload: error }) => ({
     ...state,
     error,
   }),
@@ -49,7 +48,23 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.SET_PAGE]: (state, { payload: page }) => ({
     ...state,
     page,
-  })
+  }),
+  // 통합 액션
+  [AT.SET_INITIAL_PAGE_BY_YEAR]: (state, { payload: year }) => ({
+    ...state,
+    page: 1,
+    year,
+  }),
+  [AT.SET_INITIAL_PAGE_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
+    ...state,
+    page: 1,
+    year,
+  }),
+  [AT.SET_INITIAL_PAGE_BY_YEAR_ERROR]: (state, { payload: apodList }) => ({
+    ...state,
+    page: 1,
+    year,
+  }),
 });
 
 export default apod;

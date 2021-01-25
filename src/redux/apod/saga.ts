@@ -15,7 +15,7 @@ function* getApodByPeriodSaga(action: ApodAction) {
     });
   } catch (e) {
     yield put({
-      type: AT.GET_APOD_BY_PERIOD_FAILURE,
+      type: AT.GET_APOD_BY_PERIOD_ERROR,
       payload: e,
       error: true,
     });
@@ -34,7 +34,7 @@ function* getApodByDateSaga(action: ApodAction) {
     });
   } catch (e) {
     yield put({
-      type: AT.GET_APOD_BY_DATE_FAILURE,
+      type: AT.GET_APOD_BY_DATE_ERROR,
       payload: e,
       error: true,
     });
@@ -53,7 +53,7 @@ function* getApodByYearSaga(action: ApodAction) {
     });
   } catch (e) {
     yield put({
-      type: AT.GET_APOD_BY_YEAR_FAILURE,
+      type: AT.GET_APOD_BY_YEAR_ERROR,
       payload: e,
       error: true,
     });
