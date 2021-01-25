@@ -1,3 +1,4 @@
+import { createReducer } from 'typesafe-actions';
 import { ApodState, ApodAction } from './types';
 import AT from './actionTypes';
 
@@ -10,57 +11,63 @@ const initialState: ApodState = {
 
 // switch case
 
-// const apod = createReducer<ApodState, ApodAction>(initialState, {
-//   [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
-//     ...state,
-//     apodList: [...state.apodList, ...apodList],
-//   }),
-//   [AT.GET_APOD_BY_PERIOD_ERROR]: (state, { payload: error }) => ({
-//     ...state,
-//     error,
-//   }),
-//   [AT.GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
-//     ...state,
-//     page: 1,
-//     year,
-//   }),
-//   [AT.GET_APOD_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
-//     ...state,
-//     apodList,
-//   }),
-//   [AT.GET_APOD_BY_YEAR_ERROR]: (state, { payload: error }) => ({
-//     ...state,
-//     error,
-//   }),
-// });
+const apod = createReducer<ApodState, ApodAction>(initialState, {
+  [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
+    ...state,
+    apodList: [...state.apodList, ...apodList],
+  }),
+  [AT.GET_APOD_BY_PERIOD_ERROR]: (state, { payload: error }) => ({
+    ...state,
+    error,
+  }),
+  [AT.GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
+    ...state,
+    page: 1,
+    year,
+  }),
+  [AT.GET_APOD_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
+    ...state,
+    apodList,
+  }),
+  [AT.GET_APOD_BY_YEAR_ERROR]: (state, { payload: error }) => ({
+    ...state,
+    error,
+  }),
+});
 
+export default apod;
 
-export default (state:ApodState = initialState, action:ApodAction) => {
-  switch(action.type) {
-    case AT.GET_APOD_BY_PERIOD_SUCCESS: return {
-      ...state,
-      apodList: [...state.apodList, ...action.payload.apodList],
-    }
+// export default (state: ApodState = initialState, action: ApodAction) => {
+//   switch (action.type) {
+//     case AT.GET_APOD_BY_PERIOD_SUCCESS:
+//       return {
+//         ...state,
+//         apodList: [...state.apodList, ...action.payload.apodList],
+//       };
 
-    case AT.GET_APOD_BY_PERIOD_ERROR: return {
-      ...state,
-      error:action.payload.error,
-    }
+//     case AT.GET_APOD_BY_PERIOD_ERROR:
+//       return {
+//         ...state,
+//         error: action.payload.error,
+//       };
 
-    // case AT.GET_APOD_BY_YEAR: return {
-    //   ...state,
-    //   page: 1,
-    //   action.payload.year,
-    // }
+//     case AT.GET_APOD_BY_YEAR:
+//       return {
+//         ...state,
+//         page: 1,
+//         year: action.payload.year,
+//       };
 
-    case AT.GET_APOD_BY_YEAR_SUCCESS: return {
-      ...state,
-      action.payload.apodList,
-    }
+//     case AT.GET_APOD_BY_YEAR_SUCCESS:
+//       return {
+//         ...state,
+//         apodList: action.payload.apodList,
+//       };
 
-    case AT.GET_APOD_BY_YEAR_ERROR: return {
-      ...state,
-      error,
-    }
-  }
-}
+//     case AT.GET_APOD_BY_YEAR_ERROR:
+//       return {
+//         ...state,
+//         error: action.payload.error,
+//       };
+//   }
+// };

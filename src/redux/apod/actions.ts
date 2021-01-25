@@ -1,4 +1,5 @@
 import { createAction } from 'typesafe-actions';
+import { Apod } from '../../types';
 import AT from './actionTypes';
 
 export const getApodByPeriod = createAction(
@@ -14,10 +15,16 @@ export const getApodByPeriodSuccess = createAction(
   (apodList) => apodList,
 )();
 
+interface PayLoad {
+  apodList: Apod[];
+  year: number;
+  error?: string;
+}
+
 export const getApodByPeriodError = createAction(
   AT.GET_APOD_BY_PERIOD_ERROR,
   (error) => error,
-)();
+)<PayLoad>();
 
 export const getApodByYear = createAction(
   AT.GET_APOD_BY_YEAR,
