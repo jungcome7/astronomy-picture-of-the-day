@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import * as S from './ApodPageStyle';
 import { Header } from '../../components/Header';
 import { ApodDetail } from '../../components/ApodDetail';
-import {useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 
 function ApodPage({ match }: any) {
