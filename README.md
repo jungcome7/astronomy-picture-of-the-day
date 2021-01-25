@@ -14,14 +14,14 @@
 5. 리턴할 때 **useMemo** 사용! 훅의 핵심은 memoization😎
 6. **lodash**의 debounce를 사용하여 debounce 구현하자😡
 7. apodSelected 같은 상태는 필요시 apodList에서 가져오면 된다. (**key를 url path로 넘기는 날짜로 한다**) -> 굳이 스토어에 저장할 필요 없게 된다.😎
-8. desk에서는 typesafe-actions를 쓰지 않음. **reducer는 switch문**으로 작성.😡
+8. typesafe-actions를 쓰지 않고 해봅시다. **reducer는 switch문**으로 작성.😡
 9. useScroll -> **infinite-scroll 역할만 하는 유틸**을 만들자. 😎
 
 10. **Api call을 커스텀 훅 안에서 하는 건 좋지 않다** -> 훅 안에서 api call을 할 것이라고 예측하기 어렵기 때문 -> useApod에 있는 api call은 차라리 ApodPage에서 해주자.
 
 11. **컴포넌트는 function 키워드**로 작성하자 ( 익명함수는 디버깅 시 원인을 찾기 어렵다 ) 😎
 
-12. desk의 **withPreloader, initializer** 참고 (**HOC** 디렉토리 포함) 😡
+12. -
 
     12-1. 초기 데이터 fetching 할 때, App이나 Index보다는 Main 컴포넌트에서 하는 게 낫다😎
 
@@ -30,8 +30,8 @@
 13. **store에 직접 접근(store.dispatch())하지 맙시다.**😎
 
 14. 컴포넌트와 컨테이너 모두 리덕스에 연결할 수 있다 필요시에
-15. 아바타는 유저에게 종속되기때문에 컴포넌트이ㅎ 
-16. 컴포넌트 - 어딘가에 종속되어 있음 -> 거의 프롭을 받아서 사용함 -> 필요에 따라서 리덕스 연결 할 수 있다 (리덕스 연결 x -> Avatar, 리덕스 연결o -> AsyncImage )
+15. oo는 xx에게 종속되기때문에 컴포넌트이ㅎ 
+16. 컴포넌트 - 어딘가에 종속되어 있음 -> 거의 프롭을 받아서 사용함 -> 필요에 따라서 리덕스 연결 할 수 있다
 17. 엘리먼트 - 어디에나 쓰일 수 있음
 18. **프롭 두 번 이상 넘겨주는 거 수정하기**
 19. 컨텍스트 API 
