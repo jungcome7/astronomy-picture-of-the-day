@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { SearchBar } from '../SearchBar';
-import { DatePicker } from '../DatePicker';
+import { SearchBar } from '../../elements/SearchBar';
+import { DatePicker } from '../../elements/DatePicker';
 import * as S from './HeaderStyle';
 import { useHistory } from 'react-router-dom';
 
