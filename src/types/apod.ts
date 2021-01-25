@@ -1,4 +1,4 @@
-export type Apod = {
+export interface Apod {
   title: string;
   copyright?: string;
   date: string;
@@ -7,4 +7,4 @@ export type Apod = {
   media_type?: string;
   service_version?: string;
   url?: string;
-};
+}

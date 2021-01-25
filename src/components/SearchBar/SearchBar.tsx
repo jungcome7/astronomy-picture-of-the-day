@@ -1,15 +1,19 @@
 import React from 'react';
 import * as S from './SearchBarStyle';
-import useSearch from '../../hooks/useSearch';
 import { IconSize } from '@channel.io/design-system';
 
-const SearchBar = () => {
-  const { inputValue, searchInput, onChange, onRemove } = useSearch();
+interface SearchBarProps {
+  onChange?: (e: any) => void;
+  onRemove?: () => void;
+  searchInput?: string;
+}
+
+function SearchBar({ onChange, onRemove, searchInput }: SearchBarProps) {
   return (
     <S.Container>
       <S.SearchInputForm
         placeholder="Search"
-        value={inputValue}
+        value={searchInput}
         onChange={onChange}
       />
       {searchInput && (
@@ -17,6 +21,6 @@ const SearchBar = () => {
       )}
     </S.Container>
   );
-};
+}
 
 export default SearchBar;

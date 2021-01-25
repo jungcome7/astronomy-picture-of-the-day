@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import * as S from './CardListStyle';
 import { Card } from '../Card';
-import useApodList from '../../hooks/useApod';
-import useSearch from '../../hooks/useSearch';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
 import useScroll from '../../hooks/useScroll';
 import useApod from '../../hooks/useApod';
+import _ from 'lodash';
+import { Apod } from '../../types';
 
-const CardList = () => {
-  const { apodList } = useApodList();
-  const { searchInput } = useSearch();
-  const { loadApods } = useApod();
+interface CardListProps {
+  filteredApodList: Apod[];
+}
+
+function CardList({ filteredApodList }: CardListProps) {
+  const { loadApods, apodList } = useApod();
 
   useScroll(loadApods);
 
@@ -24,11 +26,6 @@ const CardList = () => {
     (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
   );
 
-  const filteredApodList = searchInput.length
-    ? apodList.filter((apod) =>
-        apod.title.toLowerCase().includes(searchInput.toLowerCase()),
-      )
-    : apodList;
   return (
     <>
       <S.Layout>
@@ -47,6 +44,6 @@ const CardList = () => {
       </S.Layout>
     </>
   );
-};
+}
 
 export default CardList;

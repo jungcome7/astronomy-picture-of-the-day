@@ -1,20 +1,26 @@
 import React from 'react';
-import { SearchBar } from '../../components/SearchBar';
-import { DatePicker } from '../../components/DatePicker';
+import { SearchBar } from '../SearchBar';
+import { DatePicker } from '../DatePicker';
 import * as S from './HeaderStyle';
 import { Link } from 'react-router-dom';
 
-type HeaderProps = {
+export interface HeaderProps {
+  onChange?: (e: any) => void;
+  onRemove?: () => void;
+  searchInput?: string;
   isLogo?: boolean;
   isSearchBar?: boolean;
   isDatePicker?: boolean;
-};
+}
 
-const Header = ({
+function Header({
+  onChange,
+  onRemove,
+  searchInput,
   isLogo = true,
   isSearchBar = true,
   isDatePicker = true,
-}: HeaderProps) => {
+}: HeaderProps) {
   return (
     <S.Container>
       {isLogo && (
@@ -22,10 +28,16 @@ const Header = ({
           <S.Logo>Astronomy Pictures of the Day</S.Logo>
         </Link>
       )}
-      {isSearchBar && <SearchBar />}
+      {isSearchBar && (
+        <SearchBar
+          onChange={onChange}
+          onRemove={onRemove}
+          searchInput={searchInput}
+        />
+      )}
       {isDatePicker && <DatePicker />}
     </S.Container>
   );
-};
+}
 
 export default Header;

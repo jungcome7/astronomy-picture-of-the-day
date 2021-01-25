@@ -10,7 +10,7 @@ import {
 } from '../redux/apod';
 import { getPeriod } from '../utils/getPeriod';
 
-const useApod = () => {
+function useApod() {
   const apodList = useSelector((state: RootState) => state.apod.apodList);
   const page = useSelector((state: RootState) => state.apod.page);
   const year = useSelector((state: RootState) => state.apod.year);
@@ -60,6 +60,6 @@ const useApod = () => {
     removeSelectedApod,
     loadApods,
   };
-};
+}
 
 export default useApod;

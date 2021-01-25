@@ -8,7 +8,7 @@ type CardProps = {
   apod: Apod;
 };
 
-const Card = ({ apod }: CardProps) => {
+function Card({ apod }: CardProps) {
   const { title, url, date, media_type } = apod;
   const history = useHistory();
 
@@ -27,6 +27,6 @@ const Card = ({ apod }: CardProps) => {
       <S.ApodDate>{date}</S.ApodDate>
     </S.Container>
   );
-};
+}
 
 export default Card;

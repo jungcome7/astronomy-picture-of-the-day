@@ -1,4 +1,4 @@
-interface Palette {
+export interface Palette {
   MAIN: string;
   WHITE: string;
   BLACK: string;

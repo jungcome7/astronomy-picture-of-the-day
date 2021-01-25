@@ -3,7 +3,7 @@ import { SCROLL_Y_RATIO } from '../constants';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
 
-const useScroll = (callback: () => void) => {
+function useScroll(callback: () => void) {
   const finishLoad = useSelector((state: RootState) => state.apod.finishLoad);
   const scrollLoading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
@@ -12,7 +12,7 @@ const useScroll = (callback: () => void) => {
   // 데이터와 뷰에 관련된 로직이 섞여 있음
   // 컨텍스트를 잘 분리하자.
   // 인피니트 scroll역할만 하는 유틸이었어야 함
-  
+
   useEffect(() => {
     const loadApodsController = () => {
       const clientHeight = window.scrollY + window.innerHeight;
@@ -39,6 +39,6 @@ const useScroll = (callback: () => void) => {
       window.removeEventListener('scroll', loadApodsController);
     };
   }, [callback, SCROLL_Y_RATIO, finishLoad]);
-};
+}
 
 export default useScroll;

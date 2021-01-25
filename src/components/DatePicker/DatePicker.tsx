@@ -3,7 +3,7 @@ import { YEARS } from '../../constants';
 import useSelect from '../../hooks/useSelect';
 import * as S from './DatePickerStyle';
 
-const DatePicker = () => {
+function DatePicker() {
   const { onSetYear } = useSelect();
   return (
     <S.Container>
@@ -14,6 +14,6 @@ const DatePicker = () => {
       </S.Select>
     </S.Container>
   );
-};
+}
 
 export default DatePicker;
