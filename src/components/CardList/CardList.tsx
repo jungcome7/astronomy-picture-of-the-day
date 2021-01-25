@@ -26,13 +26,17 @@ function CardList({ filteredApodList }: CardListProps) {
   return (
     <>
       <S.Layout>
-        {initialLoading && <S.Icon name="rotate" size={IconSize.L} />}
-        <S.Container>
-          {apodList &&
-            filteredApodList.map((apod) => (
-              <Card key={apod.date} apod={apod} />
-            ))}
-        </S.Container>
+        {initialLoading ? (
+          <S.Icon name="rotate" size={IconSize.L} />
+        ) : (
+          <S.Container>
+            {apodList &&
+              filteredApodList.map((apod) => (
+                <Card key={apod.date} apod={apod} />
+              ))}
+          </S.Container>
+        )}
+
         {scrollLoading && (
           <S.IconWrapper>
             <S.Icon name="rotate" size={IconSize.L} />

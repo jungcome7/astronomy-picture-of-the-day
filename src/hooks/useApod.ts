@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux';
 import {
-  finishLoadApods,
   getApodByDate,
   getApodByPeriod,
   initializeSelectedApod,
@@ -44,7 +43,6 @@ function useApod() {
       new Date(endDate).getDate() >= now.getDate()
     ) {
       endDate = new Date().toISOString().split('T')[0];
-      dispatch(finishLoadApods(true));
     }
 
     dispatch(getApodByPeriod({ startDate, endDate }));

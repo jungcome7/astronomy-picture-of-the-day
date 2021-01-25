@@ -4,13 +4,7 @@ import { DatePicker } from '../../elements/DatePicker';
 import * as S from './HeaderStyle';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  finishLoadApods,
-  getApodByYear,
-  removeApodList,
-  setPage,
-  setYear,
-} from '../../redux/apod';
+import { getApodByYear, setPage, setYear } from '../../redux/apod';
 
 export interface HeaderProps {
   onChange?: (e: any) => void;
@@ -35,9 +29,7 @@ function Header({
   const onSetYear = useCallback(
     (e) => {
       const year = Number(e.target.value);
-      dispatch(removeApodList());
       dispatch(setPage(1));
-      dispatch(finishLoadApods(false));
       dispatch(setYear(year));
       dispatch(getApodByYear(year));
     },

@@ -49,15 +49,7 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.SET_PAGE]: (state, { payload: page }) => ({
     ...state,
     page,
-  }),
-  [AT.REMOVE_APOD_LIST]: (state) => ({
-    ...state,
-    apodList: [],
-  }),
-  [AT.FINISH_LOAD_APODS]: (state, { payload: isFinish }) => ({
-    ...state,
-    finishLoad: isFinish,
-  }),
+  })
 });
 
 export default apod;
