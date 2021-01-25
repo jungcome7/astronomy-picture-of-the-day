@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
-import useApod from '../../hooks/useApod';
+import React from 'react';
 import * as S from './ApodDetailStyle';
 import { IconSize } from '@channel.io/design-system';
 import { Apod } from '../../types';
-
 interface ApodDetailProps {
   apodDetail?: Apod;
 }
@@ -11,12 +9,6 @@ interface ApodDetailProps {
 // 상위 컴포넌트에서 데이터를 모두 프롭받아 렌더링만 하면 재사용성 높아짐 (렌더링 로직에만 집중할 수 있음)
 
 function ApodDetail({ apodDetail }: ApodDetailProps) {
-  // const { getApodSelected } = useApod();
-
-  // useEffect(() => {
-  //   getApodSelected(date);
-  // }, [getApodSelected, date]);
-
   if (apodDetail) {
     const {
       title,

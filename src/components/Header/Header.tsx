@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 export interface HeaderProps {
   onChange?: (e: any) => void;
   onRemove?: () => void;
+  onSetYear?: (e: any) => void;
   searchInput?: string;
   isLogo?: boolean;
   isSearchBar?: boolean;
@@ -16,6 +17,7 @@ export interface HeaderProps {
 function Header({
   onChange,
   onRemove,
+  onSetYear,
   searchInput,
   isLogo = true,
   isSearchBar = true,
@@ -39,7 +41,7 @@ function Header({
           searchInput={searchInput}
         />
       )}
-      {isDatePicker && <DatePicker />}
+      {isDatePicker && <DatePicker onSetYear={onSetYear} />}
     </S.Container>
   );
 }

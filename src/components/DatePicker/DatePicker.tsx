@@ -1,10 +1,12 @@
 import React from 'react';
 import { YEARS } from '../../constants';
-import useSelect from '../../hooks/useSelect';
 import * as S from './DatePickerStyle';
 
-function DatePicker() {
-  const { onSetYear } = useSelect();
+interface DatePickerProps {
+  onSetYear?: (e: any) => void;
+}
+
+function DatePicker({ onSetYear }: DatePickerProps) {
   return (
     <S.Container>
       <S.Select onChange={onSetYear}>

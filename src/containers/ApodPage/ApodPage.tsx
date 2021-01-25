@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import * as S from './ApodPageStyle';
 import { Header } from '../../components/Header';
 import { ApodDetail } from '../../components/ApodDetail';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 
 function ApodPage({ match }: any) {
@@ -10,7 +10,6 @@ function ApodPage({ match }: any) {
   // 리덕스 연결
   // api call 액션을 여기서 디스패치
 
-  // const dispatch = useDispatch();
   const apodList = useSelector((state: RootState) => state.apod.apodList);
 
   const apodDetail = useMemo(

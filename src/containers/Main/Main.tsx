@@ -5,7 +5,13 @@ import * as S from './MainStyle';
 import useApod from '../../hooks/useApod';
 import { useDispatch, useSelector } from 'react-redux';
 import { THIS_YEAR } from '../../constants';
-import { getApodByYear } from '../../redux/apod';
+import {
+  finishLoadApods,
+  getApodByYear,
+  removeApodList,
+  setPage,
+  setYear,
+} from '../../redux/apod';
 import useScroll from '../../hooks/useScroll';
 import { RootState } from '../../redux';
 
@@ -17,6 +23,7 @@ function Main() {
   const { loadApods, apodList } = useApod();
   const [searchInput, setSearchInput] = useState<string>('');
   const dispatch = useDispatch();
+
   useScroll(loadApods, loading);
 
   useEffect(() => {
@@ -39,6 +46,18 @@ function Main() {
     setSearchInput('');
   }, [setSearchInput]);
 
+  const onSetYear = useCallback(
+    (e) => {
+      const year = Number(e.target.value);
+      dispatch(removeApodList());
+      dispatch(setPage(1));
+      dispatch(finishLoadApods(false));
+      dispatch(setYear(year));
+      dispatch(getApodByYear(year));
+    },
+    [dispatch],
+  );
+
   const filteredApodList = useMemo(
     () =>
       searchInput.length
@@ -54,6 +73,7 @@ function Main() {
       <Header
         onChange={onChange}
         onRemove={onRemove}
+        onSetYear={onSetYear}
         searchInput={searchInput}
       />
       <CardList filteredApodList={filteredApodList} />
