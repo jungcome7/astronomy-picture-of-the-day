@@ -16,6 +16,7 @@
     "formik": "^2.2.6",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.20",
+    "pm2": "^4.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -35,9 +36,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "server":"node ./src/server/server.js"
+    "predeploy": "pm2 kill",
+    "deploy": "pm2 start ./src/server/server.js",
+    "server": "node ./src/server/server.js"
   },
   "eslintConfig": {
     "extends": [
