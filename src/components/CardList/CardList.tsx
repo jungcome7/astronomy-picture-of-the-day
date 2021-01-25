@@ -15,7 +15,6 @@ interface CardListProps {
 function CardList({ filteredApodList }: CardListProps) {
   const { loadApods, apodList } = useApod();
 
-
   const initialLoading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_YEAR'],
   );
