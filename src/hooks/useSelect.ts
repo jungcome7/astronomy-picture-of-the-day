@@ -8,6 +8,8 @@ import {
   setYear,
 } from '../redux/apod';
 
+// 훅으로 꼭 만들 필요가 있을까?
+// 꼭 필요한 경우에 훅을 만들어서 쓰자
 const useSelect = () => {
   const dispatch = useDispatch();
 

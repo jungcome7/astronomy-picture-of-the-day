@@ -19,10 +19,11 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-// const DEFAULT_PERIOD = { startDate: '2021-01-18', endDate: '2021-01-22' };
-const loadApod = () => {
+// store에 직접 접근 x
+// useDispatch
+function loadApod() {
   store.dispatch(getApodByYear(THIS_YEAR));
-};
+}
 // const loadApod = () => {
 //   store.dispatch(getApodByYear(2021));
 // };

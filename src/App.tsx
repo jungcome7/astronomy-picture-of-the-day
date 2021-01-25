@@ -2,13 +2,13 @@ import React from 'react';
 import GlobalStyle from './styles/GlobalStyle';
 import AppRouter from './routes/index';
 
-const App = () => {
+function App() {
   return (
     <>
       <GlobalStyle />
       <AppRouter></AppRouter>
     </>
   );
-};
+}
 
 export default App;

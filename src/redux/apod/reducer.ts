@@ -4,11 +4,15 @@ import AT from './actionTypes';
 
 const initialState: ApodState = {
   apodList: [],
+  // 필요시 list에서 가져오면 됨. 굳이 저장할 필요 x. 핵심: key를 url path에서 가져온다
   apodSelected: null,
   year: 2021,
   page: 1,
   finishLoad: false,
 };
+
+// switch case
+
 
 const apod = createReducer<ApodState, ApodAction>(initialState, {
   [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({

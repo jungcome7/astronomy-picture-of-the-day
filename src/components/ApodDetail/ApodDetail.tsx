@@ -7,6 +7,8 @@ type ApodDetailProps = {
   date: string;
 };
 
+// 상위 컴포넌트에서 데이터를 모두 프롭받아 렌더링만 하면 재사용성 높아짐 (렌더링 로직에만 집중할 수 있음)
+
 const ApodDetail = ({ date }: ApodDetailProps) => {
   const { getApodSelected, apodSelected } = useApod();
 

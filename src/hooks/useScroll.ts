@@ -9,6 +9,10 @@ const useScroll = (callback: () => void) => {
     (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
   );
 
+  // 데이터와 뷰에 관련된 로직이 섞여 있음
+  // 컨텍스트를 잘 분리하자.
+  // 인피니트 scroll역할만 하는 유틸이었어야 함
+  
   useEffect(() => {
     const loadApodsController = () => {
       const clientHeight = window.scrollY + window.innerHeight;

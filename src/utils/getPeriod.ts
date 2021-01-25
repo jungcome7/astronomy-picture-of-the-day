@@ -1,11 +1,11 @@
 import { APODS_PER_API_CALL } from '../constants';
 
-type Period = {
+export type Period = {
   startDate: string;
   endDate: string;
 };
 
-export const getPeriod = (year: number, page: number): Period => {
+export function (year: number, page: number): Period {
   const oneDayDateTime = 1000 * 60 * 60 * 24;
   const Interval = oneDayDateTime * APODS_PER_API_CALL;
 

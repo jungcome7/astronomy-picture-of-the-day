@@ -19,6 +19,8 @@ const useApod = () => {
   );
   const dispatch = useDispatch();
 
+  // api call을 훅 안에서 하는 건 별로 좋지 않음 ( -> ApodPage)
+
   const getApodSelected = useCallback(
     (date) => {
       dispatch(getApodByDate(date));
