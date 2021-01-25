@@ -1,10 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import * as S from './CardListStyle';
 import { Card } from '../Card';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
-import useScroll from '../../hooks/useScroll';
 import useApod from '../../hooks/useApod';
 import _ from 'lodash';
 import { Apod } from '../../types';
@@ -16,7 +15,6 @@ interface CardListProps {
 function CardList({ filteredApodList }: CardListProps) {
   const { loadApods, apodList } = useApod();
 
-  useScroll(loadApods);
 
   const initialLoading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_YEAR'],
