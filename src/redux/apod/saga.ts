@@ -1,5 +1,5 @@
 import { takeLatest } from 'redux-saga/effects';
-import { getApodByPeriod, getApodByDate, getApodByYear } from '../../api/api';
+import { getApodByPeriod, getApodByYear } from '../../api/api';
 import { call, put } from 'redux-saga/effects';
 import { startLoading, finishLoading } from '../loading';
 import { ApodAction } from './types';
@@ -24,25 +24,6 @@ function* getApodByPeriodSaga(action: ApodAction) {
   yield put(finishLoading(AT.GET_APOD_BY_PERIOD));
 }
 
-function* getApodByDateSaga(action: ApodAction) {
-  yield put(startLoading(AT.GET_APOD_BY_DATE));
-  try {
-    const response = yield call(getApodByDate, action.payload);
-    yield put({
-      type: AT.GET_APOD_BY_DATE_SUCCESS,
-      payload: response.data,
-    });
-  } catch (e) {
-    yield put({
-      type: AT.GET_APOD_BY_DATE_ERROR,
-      payload: e,
-      error: true,
-    });
-  }
-
-  yield put(finishLoading(AT.GET_APOD_BY_DATE));
-}
-
 function* getApodByYearSaga(action: ApodAction) {
   yield put(startLoading(AT.GET_APOD_BY_YEAR));
   try {
@@ -64,6 +45,5 @@ function* getApodByYearSaga(action: ApodAction) {
 
 export function* apodSaga() {
   yield takeLatest(AT.GET_APOD_BY_PERIOD, getApodByPeriodSaga);
-  yield takeLatest(AT.GET_APOD_BY_DATE, getApodByDateSaga);
   yield takeLatest(AT.GET_APOD_BY_YEAR, getApodByYearSaga);
 }

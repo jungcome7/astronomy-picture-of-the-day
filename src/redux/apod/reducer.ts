@@ -20,14 +20,6 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     error,
   }),
-  [AT.GET_APOD_BY_DATE_SUCCESS]: (state, { payload: apodSelected }) => ({
-    ...state,
-    apodSelected,
-  }),
-  [AT.GET_APOD_BY_DATE_ERROR]: (state, { payload: error }) => ({
-    ...state,
-    error,
-  }),
   [AT.GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
     ...state,
     page: 1,

@@ -19,21 +19,6 @@ export const getApodByPeriodError = createAction(
   (error) => error,
 )();
 
-export const getApodByDate = createAction(
-  AT.GET_APOD_BY_DATE,
-  (date) => date,
-)();
-
-export const getApodByDateSuccess = createAction(
-  AT.GET_APOD_BY_DATE_SUCCESS,
-  (apodSelected) => apodSelected,
-)();
-
-export const getApodByDateError = createAction(
-  AT.GET_APOD_BY_DATE_ERROR,
-  (error) => error,
-)();
-
 export const getApodByYear = createAction(
   AT.GET_APOD_BY_YEAR,
   (year) => year,

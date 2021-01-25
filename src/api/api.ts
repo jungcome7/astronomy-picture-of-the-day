@@ -20,11 +20,6 @@ export function getApodByPeriod({ startDate, endDate }: Period) {
     params: { start_date: startDate, end_date: endDate },
   });
 }
-export function getApodByDate(date: string) {
-  return api.get('', {
-    params: { date },
-  });
-}
 
 export function getApodByYear(year: number) {
   return api.get('', {

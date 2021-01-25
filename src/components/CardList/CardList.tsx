@@ -4,7 +4,6 @@ import { Card } from '../../elements/Card';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
-import useApod from '../../hooks/useApod';
 import { Apod } from '../../types';
 
 interface CardListProps {
@@ -12,7 +11,7 @@ interface CardListProps {
 }
 
 function CardList({ filteredApodList }: CardListProps) {
-  const { apodList } = useApod();
+  const apodList = useSelector((state: RootState) => state.apod.apodList);
 
   const initialLoading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_YEAR'],
