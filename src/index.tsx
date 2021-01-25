@@ -7,7 +7,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer, { rootSaga } from './redux';
 import { BrowserRouter } from 'react-router-dom';
-import { getApodByYear } from './redux/apod';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,15 +18,6 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 // store에 직접 접근 x
-// useDispatch
-// function loadApod() {
-//   store.dispatch(getApodByYear(THIS_YEAR));
-// }
-const loadApod = () => {
-  store.dispatch(getApodByYear(2021));
-};
-
-loadApod();
 
 ReactDOM.render(
   <Provider store={store}>
