@@ -14,9 +14,6 @@ function useApod() {
   const apodList = useSelector((state: RootState) => state.apod.apodList);
   const page = useSelector((state: RootState) => state.apod.page);
   const year = useSelector((state: RootState) => state.apod.year);
-  const apodSelected = useSelector(
-    (state: RootState) => state.apod.apodSelected,
-  );
   const dispatch = useDispatch();
 
   // api call을 훅 안에서 하는 건 별로 좋지 않음 ( -> ApodPage)
@@ -55,7 +52,6 @@ function useApod() {
 
   return {
     apodList,
-    apodSelected,
     getApodSelected,
     removeSelectedApod,
     loadApods,

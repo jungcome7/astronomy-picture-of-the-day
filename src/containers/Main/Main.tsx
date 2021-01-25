@@ -14,17 +14,15 @@ function Main() {
   const loading = useSelector(
     (state: RootState) => state.loading['apod/GET_APOD_BY_PERIOD'],
   );
-  const { apodSelected, removeSelectedApod, loadApods, apodList } = useApod();
+  const { loadApods, apodList } = useApod();
   const [searchInput, setSearchInput] = useState<string>('');
   const dispatch = useDispatch();
   useScroll(loadApods, loading);
 
   useEffect(() => {
-    if (apodSelected) {
-      removeSelectedApod();
+    if (!apodList.length) {
+      dispatch(getApodByYear(THIS_YEAR));
     }
-
-    dispatch(getApodByYear(THIS_YEAR));
   }, []);
 
   // desk HOC/initializer 참고

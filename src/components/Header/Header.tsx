@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { SearchBar } from '../SearchBar';
 import { DatePicker } from '../DatePicker';
 import * as S from './HeaderStyle';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export interface HeaderProps {
   onChange?: (e: any) => void;
@@ -21,12 +21,16 @@ function Header({
   isSearchBar = true,
   isDatePicker = true,
 }: HeaderProps) {
+  const history = useHistory();
+
+  const goToMain = useCallback(() => {
+    history.push('/');
+  }, []);
+
   return (
     <S.Container>
       {isLogo && (
-        <Link to="/">
-          <S.Logo>Astronomy Pictures of the Day</S.Logo>
-        </Link>
+        <S.Logo onClick={goToMain}>Astronomy Pictures of the Day</S.Logo>
       )}
       {isSearchBar && (
         <SearchBar
