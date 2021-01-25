@@ -35,7 +35,7 @@ function Main() {
             apod.title.toLowerCase().includes(searchInput.toLowerCase()),
           )
         : apodList,
-    [apodList],
+    [apodList, searchInput],
   );
 
   return (
