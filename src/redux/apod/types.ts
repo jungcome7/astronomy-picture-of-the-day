@@ -8,6 +8,5 @@ export type ApodState = {
   apodList: Apod[];
   year: number;
   page: number;
-  finishLoad: boolean;
   error?: unknown;
 };

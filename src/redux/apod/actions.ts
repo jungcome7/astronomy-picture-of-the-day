@@ -34,11 +34,6 @@ export const getApodByDateError = createAction(
   (error) => error,
 )();
 
-export const initializeSelectedApod = createAction(
-  AT.INITIALIZE_SELECTED_APOD,
-  () => ({}),
-)();
-
 export const getApodByYear = createAction(
   AT.GET_APOD_BY_YEAR,
   (year) => year,
@@ -52,13 +47,4 @@ export const getApodByYearSuccess = createAction(
 export const getApodByYearError = createAction(
   AT.GET_APOD_BY_YEAR_ERROR,
   (error) => error,
-)();
-
-export const setYear = createAction(AT.SET_YEAR, (year) => year)();
-
-export const setPage = createAction(AT.SET_PAGE, (page) => page)();
-
-export const setInitialPageByYear = createAction(
-  AT.SET_INITIAL_PAGE_BY_YEAR,
-  (year) => year,
 )();

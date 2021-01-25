@@ -4,8 +4,6 @@ import { RootState } from '../redux';
 import {
   getApodByDate,
   getApodByPeriod,
-  initializeSelectedApod,
-  setPage,
 } from '../redux/apod';
 import { getPeriod } from '../utils/getPeriod';
 
@@ -24,17 +22,9 @@ function useApod() {
     [dispatch],
   );
 
-  const removeSelectedApod = useCallback(() => {
-    dispatch(initializeSelectedApod());
-  }, [dispatch]);
-
   const loadApods = useCallback(() => {
-    dispatch(setPage(page + 1));
-
-    console.log(year);
     // eslint-disable-next-line prefer-const
     let { startDate, endDate } = getPeriod(year, page + 1);
-    console.log(startDate, endDate);
 
     const now = new Date();
 
@@ -51,7 +41,6 @@ function useApod() {
   return {
     apodList,
     getApodSelected,
-    removeSelectedApod,
     loadApods,
   };
 }
