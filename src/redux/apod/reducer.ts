@@ -20,6 +20,10 @@ const apod = createReducer<ApodState, ApodAction>(initialState, {
     ...state,
     error,
   }),
+  // PERIOD로 통합 가능
+  // get list 가 있다고 하면 get next list가 있음
+  // get list -> 초기화
+  // get next list -> 백엔드에서 받아온 페이지 버전(초기화 하면 안됨 , API값에 있는 걸 upsert)
   [AT.REQUEST_GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
     ...state,
     page: 1,

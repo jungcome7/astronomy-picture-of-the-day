@@ -47,6 +47,8 @@ function Main() {
     }
   }, []);
 
+  // 변수명 컨벤션 참고
+  // 보통 handle~~ ex. handleChange
   const onChange = useCallback(
     (e: any) => {
       setSearchInput(e.target.value);

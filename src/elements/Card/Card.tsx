@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import * as S from './CardStyle';
-import { Apod } from '../../types';
+import { Apod } from '../../types/Apod';
 import { useHistory } from 'react-router-dom';
 
 type CardProps = {

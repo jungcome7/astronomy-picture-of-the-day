@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './ApodDetailStyle';
 import { IconSize } from '@channel.io/design-system';
-import { Apod } from '../../types';
+import { Apod } from '../../types/Apod';
 interface ApodDetailProps {
   apodDetail?: Apod;
 }
@@ -9,6 +9,25 @@ interface ApodDetailProps {
 // 상위 컴포넌트에서 데이터를 모두 프롭받아 렌더링만 하면 재사용성 높아짐 (렌더링 로직에만 집중할 수 있음)
 
 function ApodDetail({ apodDetail }: ApodDetailProps) {
+  //guard
+  if(!apodDetail) { return null }
+
+  // useMomo 같은 훅을 만들었다고 치면 위의 조건에 따라 훅이 생성되지 않을 수도 있다. 권장 사항이 아니라서 린트가 에러를 뱉음
+  // function ApodDetail({ ... }) {
+  //   // hook
+  //   const foo = useMemo(...)
+  
+  //   // guard
+  //   if (!apod) { return (<Loading />) }
+  
+  //   return (
+  //     <Wrapper>
+  //       ...
+  //     </Wrapper>
+  //   )
+  // }
+
+  //고쳐보기
   if (apodDetail) {
     const {
       title,

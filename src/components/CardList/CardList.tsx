@@ -4,7 +4,7 @@ import { Card } from '../../elements/Card';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
 import { IconSize } from '@channel.io/design-system';
-import { Apod } from '../../types';
+import { Apod } from '../../types/Apod';
 
 interface CardListProps {
   filteredApodList: Apod[];

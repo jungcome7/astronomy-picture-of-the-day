@@ -1,6 +1,6 @@
 import { ActionType } from 'typesafe-actions';
 import * as actions from './actions';
-import { Apod } from '../../types';
+import { Apod } from '../../types/Apod';
 
 export type ApodAction = ActionType<typeof actions>;
 
