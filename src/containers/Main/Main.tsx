@@ -4,7 +4,7 @@ import { CardList } from '../../components/CardList';
 import * as S from './MainStyle';
 import { useDispatch, useSelector } from 'react-redux';
 import { THIS_YEAR } from '../../constants';
-import { getApodByYear, getApodByPeriod } from '../../redux/apod';
+import { requestGetApodByYear, requestGetApodByPeriod } from '../../redux/apod';
 import useScroll from '../../hooks/useScroll';
 import { RootState } from '../../redux';
 import { getPeriod } from '../../utils/getPeriod';
@@ -33,7 +33,7 @@ function Main() {
     ) {
       endDate = new Date().toISOString().split('T')[0];
     }
-    dispatch(getApodByPeriod({ startDate, endDate }));
+    dispatch(requestGetApodByPeriod({ startDate, endDate }));
   }, [dispatch, year, page]);
 
   useScroll(loadApods, loading);
@@ -43,7 +43,7 @@ function Main() {
 
   useEffect(() => {
     if (!apodList.length) {
-      dispatch(getApodByYear(THIS_YEAR));
+      dispatch(requestGetApodByYear(THIS_YEAR));
     }
   }, []);
 

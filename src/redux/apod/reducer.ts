@@ -12,24 +12,24 @@ const initialState: ApodState = {
 // switch case
 
 const apod = createReducer<ApodState, ApodAction>(initialState, {
-  [AT.GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
+  [AT.REQUEST_GET_APOD_BY_PERIOD_SUCCESS]: (state, { payload: apodList }) => ({
     ...state,
     apodList: [...state.apodList, ...apodList],
   }),
-  [AT.GET_APOD_BY_PERIOD_ERROR]: (state, { payload: error }) => ({
+  [AT.REQUEST_GET_APOD_BY_PERIOD_ERROR]: (state, { payload: error }) => ({
     ...state,
     error,
   }),
-  [AT.GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
+  [AT.REQUEST_GET_APOD_BY_YEAR]: (state, { payload: year }) => ({
     ...state,
     page: 1,
     year,
   }),
-  [AT.GET_APOD_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
+  [AT.REQUEST_GET_APOD_BY_YEAR_SUCCESS]: (state, { payload: apodList }) => ({
     ...state,
     apodList,
   }),
-  [AT.GET_APOD_BY_YEAR_ERROR]: (state, { payload: error }) => ({
+  [AT.REQUEST_GET_APOD_BY_YEAR_ERROR]: (state, { payload: error }) => ({
     ...state,
     error,
   }),
