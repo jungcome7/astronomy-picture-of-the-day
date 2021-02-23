@@ -4,7 +4,7 @@ import { Header } from '../../components/Header';
 import { ApodDetail } from '../../components/ApodDetail';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux';
-import { Apod } from '../../types/Apod';
+import { Apod } from '../../types/apod';
 
 function ApodPage({ match }: any) {
   // useSelector로 겟한다음 ApodDetail에 프롭스로 넘기고 받아서 렌더링만 하는 거

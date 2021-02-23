@@ -10,4 +10,4 @@
 `npm run build`
 
 ### Start with built artifacts
-`npm start`
+`npm server`

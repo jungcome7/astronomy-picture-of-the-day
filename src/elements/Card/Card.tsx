@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import * as S from './CardStyle';
-import { Apod } from '../../types/Apod';
+import { Apod } from '../../types/apod';
 import { useHistory } from 'react-router-dom';
 
 type CardProps = {
@@ -18,11 +18,7 @@ function Card({ apod }: CardProps) {
 
   return (
     <S.Container onClick={goToApodDetail}>
-      {media_type === 'video' ? (
-        <S.ApodThumbnailVideo src={url} />
-      ) : (
-        <S.ApodThumbnailImg src={url} />
-      )}
+      {media_type === 'video' ? <S.ApodThumbnailVideo src={url} /> : <S.ApodThumbnailImg src={url} />}
       <S.ApodTitle>{title}</S.ApodTitle>
       <S.ApodDate>{date}</S.ApodDate>
     </S.Container>

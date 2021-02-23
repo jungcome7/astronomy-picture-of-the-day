@@ -1,5 +1,4 @@
 import { createAction } from 'typesafe-actions';
-import { actionCreator, actionCreatorWithPromise } from '../../utils/ReduxUtils';
 import AT from './actionTypes';
 
 export const requestGetApodByPeriod = createAction(AT.REQUEST_GET_APOD_BY_PERIOD, ({ startDate, endDate }) => ({
